@@ -4,16 +4,20 @@ allprojects {
 
         repositories {
             mavenCentral()
+            google()
         }
 
         dependencies {
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+            classpath 'com.android.tools.build:gradle:3.2.1'
         }
     }
 
     repositories {
         mavenCentral()
+        jcenter()
+        google()
     }
 }
 
-apply from: 'gradle/dependencies.gradle'
+apply from: 'dependencies.gradle'

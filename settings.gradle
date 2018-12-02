@@ -1,12 +1,4 @@
-pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "kotlin-platform-common") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-        }
-    }
-}
 rootProject.name = 'gymbuddy'
 
 include 'common-client'
+include 'common-client-jvm'

@@ -1,0 +1,21 @@
+ext {
+    kotlinVersion = '1.3.0'
+    coroutineVersion = '1.0.1'
+    mockVersion = '1.8.13.kotlin13'
+
+    kotlinDeps = [
+            stdLib : "org.jetbrains.kotlin:kotlin-stdlib-common"
+    ]
+
+    kotlinTestDeps = [
+            annotations : "org.jetbrains.kotlin:kotlin-test-annotations-common",
+            test : "org.jetbrains.kotlin:kotlin-test-common",
+            mock : "io.mockk:mockk-common:$mockVersion"
+    ]
+
+    jdk = [
+            jdk7 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            junit : "org.jetbrains.kotlin:kotlin-test-junit",
+            mock : "io.mockk:mockk:$mockVersion"
+    ]
+}

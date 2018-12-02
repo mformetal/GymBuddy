@@ -1,3 +1,0 @@
-package kedux
-
-interface State

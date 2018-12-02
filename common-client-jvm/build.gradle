@@ -1,0 +1,10 @@
+apply plugin: 'kotlin-platform-jvm'
+
+dependencies {
+    expectedBy project(':common-client')
+
+    implementation jdk.jdk7
+
+    testImplementation jdk.junit
+    testImplementation jdk.mock
+}

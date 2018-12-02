@@ -1,10 +1,9 @@
 apply plugin: 'kotlin-platform-common'      
 
 dependencies {
-    compile deps.coroutineCcore
-    compile deps.kotlinStdLib
+    compile kotlinDeps.stdLib
 
-    testCompile testDeps.kotlinTestAnnotations
-    testCompile testDeps.kotlinTest
-    testCompile testDeps.mock
+    testCompile kotlinTestDeps.annotations
+    testCompile kotlinTestDeps.test
+    testCompile kotlinTestDeps.mock
 }

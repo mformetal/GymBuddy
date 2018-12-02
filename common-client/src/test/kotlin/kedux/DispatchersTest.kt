@@ -1,43 +1,61 @@
 package kedux
 
-import io.mockk.MockKAnnotations
-import io.mockk.every
-import io.mockk.impl.annotations.MockK
-import io.mockk.verify
-import kotlin.test.BeforeTest
+import io.mockk.*
+import kedux.middleware.Middleware
+import utils.mock
 import kotlin.test.Test
-import kotlin.test.assertNull
 
 class DispatchersTest {
 
-    @MockK lateinit var mockReducer : Reducer<SimpleEvents, SimpleState>
+    val initialState = "bro"
+    val store = mock<SimpleStore<String>> {
+        every { state } returns initialState
+    }
+    val reducer = mock<Reducer<String, String>> {
+        every { reduce(any(), any()) } returns "brah"
+    }
 
-    @BeforeTest
-    fun setup() {
-        MockKAnnotations.init(this)
+    val dispatcher = Dispatcher.forStore(store, reducer)
+
+    @Test
+    fun `should set state on store with reducer`() {
+        val action = "update"
+        dispatcher.dispatch(action)
+
+        verify {
+            reducer.reduce(action, initialState)
+            store.state = "brah"
+        }
     }
 
     @Test
-    fun `test dispatching calls reducer`() {
-        val state = SimpleState(0)
-        every { mockReducer.reduce(any<SimpleEvents.EventOne>(), any()) } returns state
-        val store = SimpleStore(state)
-        val dispatcher = Dispatchers.create(store, mockReducer)
-        val event = SimpleEvents.EventOne()
+    fun `should run chained middleware`() {
+        val middleWare = mock<Middleware<String, String>>()
+        val chainedDispatcher = spyk(dispatcher.chain(middleWare))
 
-        dispatcher.dispatch(SimpleEvents.EventOne())
+        val action = "thing"
+        chainedDispatcher.dispatch(action)
 
-        assertNull(event)
+        verify {
+            middleWare.dispatch(any(), action)
+        }
     }
 
-//    @Test
-//    fun testDispatchingChangesStoreState() {
-//        val state = SimpleState(0)
-//        val secondState = SimpleState(1)
-//        whenever(mockReducer.reduce(any<SimpleEvents.EventOne>(), any())).thenReturn(secondState)
-//        val store = SimpleStore(state)
-//        val dispatcher = Dispatchers.create(store, mockReducer)
-//        dispatcher.dispatch(SimpleEvents.EventOne())
-//        assert(store.state.ordinal).isEqualTo(1)
-//    }
+    @Test
+    fun `should give next middleware upated state from dispatcher`() {
+        val middleWare = mock<Middleware<String, String>>()
+        val chainedDispatcher = spyk(dispatcher.chain(middleWare))
+
+        val action = "thing"
+        chainedDispatcher.dispatch(action)
+
+        val slot = slot<Middleware.Next<String, String>>()
+        verify {
+            middleWare.dispatch(capture(slot), action)
+        }
+        slot.captured.next(action)
+        verify(exactly = 1) {
+            chainedDispatcher.dispatch(action)
+        }
+    }
 }

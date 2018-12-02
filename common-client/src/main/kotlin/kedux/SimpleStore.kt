@@ -1,27 +1,49 @@
 package kedux
 
-import kotlin.properties.Delegates
+import kotlin.jvm.Volatile
 
-open class SimpleStore<S : State>(initialState: S,
-                                  private val subscribers: MutableList<StateChangeListener<S>> = mutableListOf()) : Store<S> {
+/**
+ * A thread-safe store that allows you to attach and remove listeners for when the state changes.
+ */
+open class SimpleStore<S>(initialState: S) : Store<S> {
 
-    override var state by Delegates.observable(initialState) { _, _, _ ->
-        notifySubscribers()
+    @Volatile
+    override var state: S = initialState
+        set(newState) {
+            if (field != newState) {
+                field = newState
+                notifyListeners()
+            }
+        }
+    private val listeners = mutableListOf<Listener<S>>()
+
+    /**
+     * Registers as listener to receive state changes. The current state will be delivered
+     * immediately.
+     */
+    fun addListener(listener: Listener<S>) {
+        listeners.add(listener)
+        notifyListeners()
     }
 
-    init {
-        notifySubscribers()
+    /**
+     * Removes the listener so it no longer receives state changes.
+     */
+    fun removeListener(listener: Listener<S>) {
+        listeners.remove(listener)
     }
 
-    private fun notifySubscribers() {
-        subscribers.forEach { it.invoke(state) }
+    private fun notifyListeners() {
+        listeners.forEach {
+            it.onNewState(state)
+        }
     }
 
-    override fun subscribe(stateChangeListener: StateChangeListener<S>) {
-        subscribers.add(stateChangeListener)
-    }
-
-    override fun unsubscribe(stateChangeListener: StateChangeListener<S>) {
-        subscribers.remove(stateChangeListener)
+    interface Listener<S> {
+        /**
+         * Called when a new state is set. This is called on the same thread as  or [.setState].
+         */
+        fun onNewState(state: S?)
     }
 }
+
