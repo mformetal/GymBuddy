@@ -4,11 +4,12 @@ ext {
 
     deps = [
             coroutineCcore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
-            kotlinStdLib : "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlinVersion"
+            kotlinStdLib : "org.jetbrains.kotlin:kotlin-stdlib-common"
     ]
 
     testDeps = [
-            kotlinTestAnnotations : "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlinVersion",
-            kotlinTest : "org.jetbrains.kotlin:kotlin-test-common$kotlinVersion"
+            kotlinTestAnnotations : "org.jetbrains.kotlin:kotlin-test-annotations-common",
+            kotlinTest : "org.jetbrains.kotlin:kotlin-test-common",
+            mock :  "io.mockk:mockk:1.8.13.kotlin13"
     ]
 }
