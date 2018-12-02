@@ -1,12 +1,9 @@
-plugins {
-    id 'kotlin-platform-common' version '1.2.60'
-}
-repositories {
-    mavenCentral()
-}
+apply plugin: 'kotlin-platform-common'
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-common"
-    testCompile "org.jetbrains.kotlin:kotlin-test-annotations-common"
-    testCompile "org.jetbrains.kotlin:kotlin-test-common"
+    compile deps.coroutineCcore
+    compile deps.kotlinStdLib
+
+    testCompile testDeps.kotlinTestAnnotations
+    testCompile testDeps.kotlinTest
 }
