@@ -8,7 +8,7 @@ import kotlin.test.assertNull
 
 class SimpleStoreTest {
 
-    val listener = mockk<SimpleStore.Listener<String>>()
+    val listener = mockk<Store.Listener<String>>()
 
     @Test
     fun `should receive initial state`() {

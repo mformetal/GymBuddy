@@ -13,9 +13,12 @@ ext {
             mock : "io.mockk:mockk-common:$mockVersion"
     ]
 
-    jdk = [
-            jdk7 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-            junit : "org.jetbrains.kotlin:kotlin-test-junit",
+    androidX = '1.0.0'
+
+    androidDeps = [
+            appCompat : "androidx.appcompat:appcompat:$androidX",
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            junit : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
             mock : "io.mockk:mockk:$mockVersion"
     ]
 }

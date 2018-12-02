@@ -1,4 +1,4 @@
 rootProject.name = 'gymbuddy'
 
+include ':android'
 include 'common-client'
-include 'common-client-jvm'
