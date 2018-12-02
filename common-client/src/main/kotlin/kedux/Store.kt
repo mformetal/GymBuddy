@@ -16,4 +16,11 @@ interface Store<S> {
      * tests.
      */
     var state: S
+
+    interface Listener<S> {
+        /**
+         * Called when a new state is set. This is called on the same thread as  or [.setState].
+         */
+        fun onNewState(state: S?)
+    }
 }

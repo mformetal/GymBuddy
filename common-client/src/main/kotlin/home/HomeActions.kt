@@ -1,3 +1,6 @@
 package home
 
-sealed class HomeActions
+sealed class HomeActions {
+
+    object HelloClicked : HomeActions()
+}

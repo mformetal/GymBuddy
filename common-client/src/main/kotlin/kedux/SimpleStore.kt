@@ -15,13 +15,13 @@ open class SimpleStore<S>(initialState: S) : Store<S> {
                 notifyListeners()
             }
         }
-    private val listeners = mutableListOf<Listener<S>>()
+    private val listeners = mutableListOf<Store.Listener<S>>()
 
     /**
      * Registers as listener to receive state changes. The current state will be delivered
      * immediately.
      */
-    fun addListener(listener: Listener<S>) {
+    fun addListener(listener: Store.Listener<S>) {
         listeners.add(listener)
         notifyListeners()
     }
@@ -29,7 +29,7 @@ open class SimpleStore<S>(initialState: S) : Store<S> {
     /**
      * Removes the listener so it no longer receives state changes.
      */
-    fun removeListener(listener: Listener<S>) {
+    fun removeListener(listener: Store.Listener<S>) {
         listeners.remove(listener)
     }
 
@@ -37,13 +37,6 @@ open class SimpleStore<S>(initialState: S) : Store<S> {
         listeners.forEach {
             it.onNewState(state)
         }
-    }
-
-    interface Listener<S> {
-        /**
-         * Called when a new state is set. This is called on the same thread as  or [.setState].
-         */
-        fun onNewState(state: S?)
     }
 }
 
