@@ -7,57 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31cbb051-d052-4e17-8b5b-1e52f48d84b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/iosApp/iosApp.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosApp/AppDelegate.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosApp/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosApp/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosApp/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosApp/ViewController.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosAppTests/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iosApp/iosAppTests/iosAppTests.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/expectations/Widgets.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/mformetal/gymbuddy/declarations/Widgets.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/test/resources/io/mockk/settings.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/resources/io/mockk/settings.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/extensions/AnyExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/extensions/AnyExtensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/home/HomeActions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/home/HomeActions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/home/HomeReducer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/home/HomeReducer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/home/HomeState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/home/HomeState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/home/HomeStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/home/HomeStore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/home/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/home/HomeViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/Dispatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/Dispatcher.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/Reducer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/Reducer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/SimpleStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/SimpleStore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/Store.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/Store.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/middleware/Middleware.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/middleware/Middleware.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/test/kotlin/kedux/DispatchersTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonTest/kotlin/kedux/DispatchersTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/test/kotlin/kedux/SimpleStoreTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonTest/kotlin/kedux/SimpleStoreTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/test/kotlin/kedux/TestKeduxComponents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonTest/kotlin/kedux/TestKeduxComponents.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/test/kotlin/utils/Assertions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonTest/kotlin/utils/Assertions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-client/src/test/kotlin/utils/MockkAlias.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/commonTest/kotlin/utils/MockkAlias.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosApp.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosApp/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosApp/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosApp/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosApp/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosApp/ViewController.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosAppTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iosApp/iosAppTests/iosAppTests.swift" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -98,11 +60,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+            <state relative-caret-position="453">
+              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/mformetal/gymbuddy/declarations/Widgets.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -111,25 +82,16 @@
         <entry file="file://$PROJECT_DIR$/dependencies.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="18" />
+              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/Dispatcher.kt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/commonMain/kotlin/expectations/Widgets.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/SimpleStore.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+            <state relative-caret-position="30">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -156,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/Dispatcher.java" />
         <option value="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/middleware/TestMiddleware.kt" />
         <option value="$PROJECT_DIR$/common-client/src/main/kotlin/kedux/State.kt" />
@@ -206,6 +167,8 @@
         <option value="$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/SimpleStore.kt" />
         <option value="$PROJECT_DIR$/dependencies.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/mformetal/gymbuddy/declarations/Widgets.kt" />
+        <option value="$PROJECT_DIR$/app/src/commonMain/kotlin/expectations/Widgets.kt" />
       </list>
     </option>
   </component>
@@ -240,6 +203,55 @@
               <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gymbuddy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gymbuddy" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="gymbuddy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gymbuddy" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gymbuddy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gymbuddy" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gymbuddy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gymbuddy" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gymbuddy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gymbuddy" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mformetal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gymbuddy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gymbuddy" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mformetal" type="462c0819:PsiDirectoryNode" />
+              <item name="gymbuddy" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -250,7 +262,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543795850750" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543796407263" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -470,7 +482,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27106228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -729,10 +740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/Dispatcher.kt">
+    <entry file="file://$PROJECT_DIR$/dependencies.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+        <state relative-caret-position="270">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -743,17 +754,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/commonMain/kotlin/kedux/Dispatcher.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="353">
+          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+        <state relative-caret-position="453">
+          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/mformetal/gymbuddy/declarations/Widgets.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/commonMain/kotlin/expectations/Widgets.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
