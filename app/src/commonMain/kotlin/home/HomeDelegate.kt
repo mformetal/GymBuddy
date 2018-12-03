@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.home
+package home
 
 import expectations.widget.ButtonWidget
 import expectations.widget.TextWidget

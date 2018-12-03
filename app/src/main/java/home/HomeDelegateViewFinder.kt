@@ -1,8 +1,7 @@
-package mformetal.gymbuddy.home
+package home
 
 import android.view.Window
 import expectations.widget.Screen
-import expectations.widget.TextWidget
 import mformetal.gymbuddy.R
 
 actual class HomeDelegateViewFinder(window: Window) {

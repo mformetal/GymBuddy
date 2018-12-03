@@ -1,9 +1,8 @@
-package mformetal.gymbuddy.home
+package home
 
 import android.os.Bundle
 import androidx.core.app.ComponentActivity
 import kedux.Dispatcher
-import kedux.SimpleStore
 import mformetal.gymbuddy.R
 
 class HomeActivity : ComponentActivity() {

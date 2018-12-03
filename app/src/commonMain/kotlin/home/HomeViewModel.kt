@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.home
+package home
 
 import kedux.Dispatcher
 import kedux.SimpleStore
