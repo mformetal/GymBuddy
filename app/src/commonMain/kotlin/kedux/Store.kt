@@ -21,6 +21,6 @@ interface Store<S> {
         /**
          * Called when a new state is set. This is called on the same thread as  or [.setState].
          */
-        fun onNewState(state: S?)
+        fun onNewState(state: S)
     }
 }

@@ -1,4 +1,4 @@
-package home
+package mformetal.gymbuddy.home
 
 sealed class HomeActions {
 

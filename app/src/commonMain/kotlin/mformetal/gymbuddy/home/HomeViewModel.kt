@@ -1,4 +1,4 @@
-package home
+package mformetal.gymbuddy.home
 
 import kedux.Dispatcher
 import kedux.SimpleStore
@@ -11,11 +11,11 @@ class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>
         dispatcher.dispatch(HomeActions.HelloClicked)
     }
 
-    fun observe(listener: Store.Listener<HomeState>) {
+    fun listen(listener: Store.Listener<HomeState>) {
         store.addListener(listener)
     }
 
-    fun cease(listener: Store.Listener<HomeState>) {
+    fun ignore(listener: Store.Listener<HomeState>) {
         store.removeListener(listener)
     }
 }
