@@ -5,9 +5,11 @@ import kedux.Reducer
 class HomeReducer : Reducer<HomeActions, HomeState> {
     override fun reduce(action: HomeActions, state: HomeState): HomeState {
         return when (action) {
-            HomeActions.HelloClicked -> {
+            HomeActions.CounterClicked -> {
+                val inc = state.counter.inc()
                 state.copy(
-                        counter = state.counter.inc()
+                        counter = inc,
+                        text = "Hello, $inc times!"
                 )
             }
         }

@@ -7,8 +7,8 @@ import kedux.Store
 class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>,
                     private val store: SimpleStore<HomeState>) {
 
-    fun onHelloClicked() {
-        dispatcher.dispatch(HomeActions.HelloClicked)
+    fun onCounterClicked() {
+        dispatcher.dispatch(HomeActions.CounterClicked)
     }
 
     fun listen(listener: Store.Listener<HomeState>) {
