@@ -1,13 +1,10 @@
 package kedux
 
-import kotlin.jvm.Volatile
-
 /**
  * A thread-safe store that allows you to attach and remove listeners for when the state changes.
  */
 open class SimpleStore<S>(initialState: S) : Store<S> {
 
-    @Volatile
     override var state: S = initialState
         set(newState) {
             if (field != newState) {

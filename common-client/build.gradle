@@ -1,9 +1,0 @@
-apply plugin: 'kotlin-platform-common'      
-
-dependencies {
-    compile kotlinDeps.stdLib
-
-    testCompile kotlinTestDeps.annotations
-    testCompile kotlinTestDeps.test
-    testCompile kotlinTestDeps.mock
-}
