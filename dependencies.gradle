@@ -3,7 +3,8 @@ ext {
     mockVersion = '1.8.13.kotlin13'
 
     kotlinDeps = [
-            stdLib : "org.jetbrains.kotlin:kotlin-stdlib-common"
+            common : "org.jetbrains.kotlin:kotlin-stdlib-common",
+            jvm : "org.jetbrains.kotlin:kotlin-stdlib"
     ]
 
     kotlinTestDeps = [
@@ -16,7 +17,7 @@ ext {
 
     androidDeps = [
             appCompat : "androidx.appcompat:appcompat:$androidX",
-            kotlin : "org.jetbrains.kotlin:kotlin-stdlib",
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             junit : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
             mock : "io.mockk:mockk:$mockVersion"
     ]

@@ -1,0 +1,83 @@
+apply plugin: 'kotlin-multiplatform'
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation androidDeps.appCompat
+}
+
+kotlin {
+    targets {
+        fromPreset(presets.android, 'android')
+        // This preset is for iPhone emulator
+        // Switch here to presets.iosArm64 (or iosArm32) to build library for iPhone device
+        fromPreset(presets.iosX64, 'ios') {
+            compilations.main.outputKinds('FRAMEWORK')
+        }
+    }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation kotlinDeps.common
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation kotlinTestDeps.annotations
+                implementation kotlinTestDeps.test
+                implementation kotlinTestDeps.mock
+            }
+        }
+        androidMain {
+            dependencies {
+                implementation kotlinDeps.jvm
+            }
+        }
+        androidTest {
+            dependencies {
+                implementation androidDeps.junit
+                implementation androidDeps.mock
+            }
+        }
+    }
+}
+
+// This task attaches native framework built from ios module to Xcode project
+// (see iosApp directory). Don't run this task directly,
+// Xcode runs this task itself during its build process.
+// Before opening the project from iosApp directory in Xcode,
+// make sure all Gradle infrastructure exists (gradle.wrapper, gradlew).
+task copyFramework {
+    def buildType = project.findProperty("kotlin.build.type") ?: "DEBUG"
+    def target = project.findProperty("kotlin.target") ?: "ios"
+    dependsOn "link${buildType.toLowerCase().capitalize()}Framework${target.capitalize()}"
+
+    doLast {
+        def srcFile = kotlin.targets."$target".compilations.main.getBinary("FRAMEWORK", buildType)
+        def targetDir = getProperty("configuration.build.dir")
+        copy {
+            from srcFile.parent
+            into targetDir
+            include 'app.framework/**'
+            include 'app.framework.dSYM'
+        }
+    }
+}
