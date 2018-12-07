@@ -12,7 +12,7 @@ class HomeActivity : ComponentActivity() {
         val reducer = HomeReducer()
         val dispatcher = Dispatcher.forStore(store, reducer)
         val viewModel = HomeViewModel(dispatcher, store)
-        HomeDelegate(viewModel, HomeDelegateViewFinder(window))
+        HomeDelegate(viewModel)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
