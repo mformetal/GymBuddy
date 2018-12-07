@@ -57,6 +57,10 @@ kotlin {
                 implementation androidDeps.mock
             }
         }
+        iosMain {
+        }
+        iosTest {
+        }
     }
 }
 
