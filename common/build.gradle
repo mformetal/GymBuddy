@@ -26,13 +26,16 @@ dependencies {
 
 kotlin {
     targets {
-        fromPreset(presets.android, 'android')
-        // This preset is for iPhone emulator
-        // Switch here to presets.iosArm64 (or iosArm32) to build library for iPhone device
-        fromPreset(presets.iosX64, 'ios') {
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
+                              ? presets.iosArm64 : presets.iosX64
+
+        fromPreset(iOSTarget, 'iOS') {
             compilations.main.outputKinds('FRAMEWORK')
         }
+
+        fromPreset(presets.android, 'android')
     }
+
     sourceSets {
         commonMain {
             dependencies {
@@ -62,6 +65,11 @@ kotlin {
         iosTest {
         }
     }
+}
+
+// workaround for https://youtrack.jetbrains.com/issue/KT-27170
+configurations {
+    compileClasspath
 }
 
 // This task attaches native framework built from ios module to Xcode project
