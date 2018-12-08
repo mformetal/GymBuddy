@@ -13,10 +13,17 @@ ext {
             mock : "io.mockk:mockk-common:$mockVersion"
     ]
 
-    androidX = '1.0.0'
+    androidXVersion = '1.0.0'
+    ankoVersion = '0.10.8'
 
     androidDeps = [
-            appCompat : "androidx.appcompat:appcompat:$androidX",
+            androidx : "androidx.appcompat:appcompat:$androidXVersion",
+            anko : [
+                    "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion",
+                    "org.jetbrains.anko:anko-sdk25:$ankoVersion",
+                    "org.jetbrains.anko:anko-sdk25-coroutines:$ankoVersion",
+                    "org.jetbrains.anko:anko-appcompat-v7-coroutines:$ankoVersion",
+            ],
             kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             junit : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
             mock : "io.mockk:mockk:$mockVersion"

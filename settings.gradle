@@ -9,5 +9,7 @@ pluginManagement {
 }
 rootProject.name = 'gymbuddy'
 
+enableFeaturePreview("GRADLE_METADATA")
+
 include ':common'
 include ':platform-android'

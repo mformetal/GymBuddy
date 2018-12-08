@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-    implementation androidDeps.appCompat
+    implementation androidDeps.androidx
 }
 
 kotlin {

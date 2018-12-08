@@ -1,0 +1,4 @@
+package strings
+
+class Wtf {
+}

@@ -1,5 +1,5 @@
 package expectations
 
-import android.widget.Button
+import android.view.View
 
-actual typealias Widget = Button
+actual typealias Widget = View
