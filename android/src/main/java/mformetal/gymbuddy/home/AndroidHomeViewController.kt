@@ -26,9 +26,17 @@ class AndroidHomeViewController(private val viewModel: HomeViewModel) : HomeView
         frameLayout {
             lparams(width = matchParent, height = matchParent)
 
+            calendarView {
+
+            }.lparams(matchParent, wrapContent) {
+                gravity = Gravity.TOP
+            }
+
             collapsibleCalendar {
 
-            }.lparams(width = matchParent, height = wrapContent)
+            }.lparams(width = matchParent, height = wrapContent) {
+                gravity = Gravity.BOTTOM
+            }
         }
     }.view
 }
