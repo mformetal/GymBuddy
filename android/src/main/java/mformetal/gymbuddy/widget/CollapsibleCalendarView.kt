@@ -36,7 +36,7 @@ class CollapsibleCalendarView @JvmOverloads constructor(
     init {
         AnkoContext.createDelegate(this).apply {
             constraintLayout {
-                previousButton = themedImageButton(R.drawable.arrow_back, R.style.Widget_AppCompat_Button_Borderless) {
+                previousButton = themedImageButton(R.drawable.chevron_left, R.style.Widget_AppCompat_Button_Borderless) {
                     id = View.generateViewId()
 
                     backgroundResource = context.getResourceIdAttribute(R.attr.selectableItemBackgroundBorderless)
@@ -46,7 +46,7 @@ class CollapsibleCalendarView @JvmOverloads constructor(
                     }
                 }.lparams(wrapContent, wrapContent)
 
-                nextButton = themedImageButton(R.drawable.arrow_forward, R.style.Widget_AppCompat_Button_Borderless) {
+                nextButton = themedImageButton(R.drawable.chevron_right, R.style.Widget_AppCompat_Button_Borderless) {
                     id = View.generateViewId()
 
                     backgroundResource = context.getResourceIdAttribute(R.attr.selectableItemBackgroundBorderless)
