@@ -22,8 +22,10 @@ dependencies {
     implementation project(":common")
 
     implementation androidDeps.kotlin
-
+    implementation androidDeps.date
+    
     implementation androidDeps.androidx
+    implementation androidDeps.constraint
     implementation androidDeps.anko
     
     debugImplementation androidDeps.debugLeakCanary

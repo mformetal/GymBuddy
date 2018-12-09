@@ -1,6 +1,7 @@
 package mformetal.gymbuddy
 
 import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
 
 class App : Application() {
@@ -9,6 +10,8 @@ class App : Application() {
         super.onCreate()
 
         initLeakCanary()
+
+        AndroidThreeTen.init(this)
     }
 
     fun initLeakCanary() {

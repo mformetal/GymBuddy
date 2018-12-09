@@ -1,11 +1,21 @@
 package mformetal.gymbuddy.home
 
+import android.content.res.Resources
 import android.view.Gravity
 import android.view.View
+import android.view.ViewParent
+import android.widget.CalendarView
+import androidx.viewpager.widget.ViewPager
 import expectations.Widget
+import mformetal.gymbuddy.extensions.collapsibleCalendar
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
-import strings.APP_NAME
+import org.jetbrains.anko.sdk25.coroutines.onDateChange
+import org.threeten.bp.Instant
+import org.threeten.bp.LocalDate
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 class AndroidHomeViewController(private val viewModel: HomeViewModel) : HomeViewController(), AnkoComponent<HomeActivity> {
 
@@ -16,23 +26,9 @@ class AndroidHomeViewController(private val viewModel: HomeViewModel) : HomeView
         frameLayout {
             lparams(width = matchParent, height = matchParent)
 
-            textView {
-                gravity = Gravity.CENTER
-            }.lparams(wrapContent, wrapContent) {
-                gravity = Gravity.CENTER
-            }.also {
-                textWidget = it
-            }
+            collapsibleCalendar {
 
-            button(APP_NAME) {
-                gravity = Gravity.CENTER
-
-                onClick {
-                    viewModel.onCounterClicked()
-                }
-            }.lparams(wrapContent, wrapContent) {
-                gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
-            }
+            }.lparams(width = matchParent, height = wrapContent)
         }
     }.view
 }

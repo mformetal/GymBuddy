@@ -15,7 +15,7 @@ class HomeDelegate(private val viewModel: HomeViewModel,
 
     private val listener : Store.Listener<HomeState> = object : Store.Listener<HomeState> {
         override fun onNewState(state: HomeState) {
-            viewController.setMessage(state.text)
+
         }
     }
 }

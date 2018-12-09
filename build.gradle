@@ -1,13 +1,11 @@
 buildscript {
-    ext.kotlinVersion = '1.3.0'
-
     repositories {
         mavenCentral()
         google()
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.0'
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
     }
@@ -18,7 +16,8 @@ allprojects {
         mavenCentral()
         jcenter()
         google()
-        maven { url  "https://dl.bintray.com/jetbrains/anko" }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://dl.bintray.com/jetbrains/anko" }
         maven { url "http://dl.bintray.com/kotlin/kotlin-dev" }
     }
 }
