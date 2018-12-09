@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "mformetal.gymbuddy"
+
+        minSdkVersion 21
+        targetSdkVersion 28
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation project(":common")
+
+    implementation androidDeps.kotlin
+
+    implementation androidDeps.androidx
+    implementation androidDeps.anko
+    
+    debugImplementation androidDeps.debugLeakCanary
+    releaseImplementation androidDeps.releaseLeakCanary
+}
