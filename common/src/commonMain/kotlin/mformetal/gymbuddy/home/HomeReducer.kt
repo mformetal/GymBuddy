@@ -1,6 +1,6 @@
 package mformetal.gymbuddy.home
 
-import kedux.Reducer
+import mformetal.gymbuddy.kedux.Reducer
 
 class HomeReducer : Reducer<HomeActions, HomeState> {
     override fun reduce(action: HomeActions, state: HomeState): HomeState {

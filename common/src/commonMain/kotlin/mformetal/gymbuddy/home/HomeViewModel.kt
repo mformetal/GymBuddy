@@ -1,11 +1,15 @@
 package mformetal.gymbuddy.home
 
-import kedux.Dispatcher
-import kedux.SimpleStore
-import kedux.Store
+import mformetal.gymbuddy.kedux.Dispatcher
+import mformetal.gymbuddy.kedux.SimpleStore
+import mformetal.gymbuddy.kedux.Store
 
 class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>,
                     private val store: SimpleStore<HomeState>) {
+
+    val currentMonthYearString : String = {
+        "FAKE BULLSHIT"
+    }()
 
     fun listen(listener: Store.Listener<HomeState>) {
         store.addListener(listener)

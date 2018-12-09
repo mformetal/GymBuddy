@@ -1,31 +1,31 @@
-package mformetal.gymbuddy.widget
+package mformetal.gymbuddy.home
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.Gravity
-import android.view.View
-import android.view.ViewParent
-import android.widget.Button
+import android.view.ViewManager
 import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet.PARENT_ID
-import androidx.viewpager.widget.ViewPager
-import kotlinx.coroutines.CoroutineScope
 import mformetal.gymbuddy.R
-import mformetal.gymbuddy.extensions.collapsibleCalendar
+import mformetal.gymbuddy.extensions.generateId
 import mformetal.gymbuddy.extensions.getResourceIdAttribute
 import org.jetbrains.anko.*
-import org.jetbrains.anko.constraint.layout.ConstraintSetBuilder
 import org.jetbrains.anko.constraint.layout.ConstraintSetBuilder.Side.*
 import org.jetbrains.anko.constraint.layout.applyConstraintSet
 import org.jetbrains.anko.constraint.layout.constraintLayout
-import org.jetbrains.anko.custom.style
+import org.jetbrains.anko.custom.ankoView
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
+fun ViewManager.collapsibleCalendar(viewModel: HomeViewModel, init: CollapsibleCalendarView.() -> Unit) : CollapsibleCalendarView {
+    return ankoView({ CollapsibleCalendarView(viewModel, it) }, theme = 0, init = init)
+}
+
+@SuppressLint("ViewConstructor")
 class CollapsibleCalendarView @JvmOverloads constructor(
+        private val viewModel: HomeViewModel,
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
@@ -37,7 +37,7 @@ class CollapsibleCalendarView @JvmOverloads constructor(
         AnkoContext.createDelegate(this).apply {
             constraintLayout {
                 previousButton = themedImageButton(R.drawable.chevron_left, R.style.Widget_AppCompat_Button_Borderless) {
-                    id = View.generateViewId()
+                    generateId()
 
                     backgroundResource = context.getResourceIdAttribute(R.attr.selectableItemBackgroundBorderless)
 
@@ -47,7 +47,7 @@ class CollapsibleCalendarView @JvmOverloads constructor(
                 }.lparams(wrapContent, wrapContent)
 
                 nextButton = themedImageButton(R.drawable.chevron_right, R.style.Widget_AppCompat_Button_Borderless) {
-                    id = View.generateViewId()
+                    generateId()
 
                     backgroundResource = context.getResourceIdAttribute(R.attr.selectableItemBackgroundBorderless)
 
@@ -56,8 +56,8 @@ class CollapsibleCalendarView @JvmOverloads constructor(
                     }
                 }.lparams(wrapContent, wrapContent)
 
-                currentMonthView = textView("December 2018") {
-                    id = View.generateViewId()
+                currentMonthView = textView(viewModel.currentMonthYearString) {
+                    generateId()
                     gravity = Gravity.CENTER
                     textAppearance = R.style.TextAppearance_AppCompat_Body2
                 }.lparams(wrapContent, wrapContent)

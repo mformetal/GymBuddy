@@ -1,8 +1,8 @@
-package kedux
+package mformetal.gymbuddy.kedux
 
 import io.mockk.*
-import kedux.middleware.Middleware
-import utils.mock
+import mformetal.gymbuddy.kedux.middleware.Middleware
+import mformetal.gymbuddy.utils.mock
 import kotlin.test.Test
 
 class DispatchersTest {

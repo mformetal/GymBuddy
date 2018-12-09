@@ -13,12 +13,10 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenCentral()
         jcenter()
         google()
-        maven { url 'https://jitpack.io' }
+        maven { url "https://dl.bintray.com/soywiz/soywiz" }
         maven { url "https://dl.bintray.com/jetbrains/anko" }
-        maven { url "http://dl.bintray.com/kotlin/kotlin-dev" }
     }
 }
 

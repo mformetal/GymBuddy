@@ -2,12 +2,12 @@ ext {
     kotlinVersion = '1.3.0'
     mockVersion = '1.8.13.kotlin13'
 
-    kotlinDeps = [
-            common : "org.jetbrains.kotlin:kotlin-stdlib-common",
-            jvm : "org.jetbrains.kotlin:kotlin-stdlib"
+    commonDeps = [
+            kotlinCommon : "org.jetbrains.kotlin:kotlin-stdlib-common",
+            kotlinJvm : "org.jetbrains.kotlin:kotlin-stdlib"
     ]
 
-    kotlinTestDeps = [
+    commonTestDeps = [
             annotations : "org.jetbrains.kotlin:kotlin-test-annotations-common",
             test : "org.jetbrains.kotlin:kotlin-test-common",
             mock : "io.mockk:mockk-common:$mockVersion"

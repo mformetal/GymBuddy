@@ -1,6 +1,6 @@
-package kedux
+package mformetal.gymbuddy.kedux
 
-import kedux.middleware.Middleware
+import mformetal.gymbuddy.kedux.middleware.Middleware
 
 /**
  * Dispatches actions with [Reducer]s and updates the state in the [Store]. You can chain [Middleware]

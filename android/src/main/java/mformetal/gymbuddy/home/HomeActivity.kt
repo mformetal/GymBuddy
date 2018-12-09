@@ -2,7 +2,7 @@ package mformetal.gymbuddy.home
 
 import android.os.Bundle
 import androidx.core.app.ComponentActivity
-import kedux.Dispatcher
+import mformetal.gymbuddy.kedux.Dispatcher
 import org.jetbrains.anko.setContentView
 
 class HomeActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package kedux
+package mformetal.gymbuddy.kedux
 
 class SimpleState(val ordinal: Int)
 

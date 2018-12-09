@@ -1,10 +1,8 @@
-package kedux
+package mformetal.gymbuddy.kedux
 
 import io.mockk.mockk
 import io.mockk.verify
 import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNull
 
 class SimpleStoreTest {
 

@@ -1,5 +1,5 @@
 package mformetal.gymbuddy.home
 
-import kedux.SimpleStore
+import mformetal.gymbuddy.kedux.SimpleStore
 
 class HomeStore : SimpleStore<HomeState>(initialState = HomeState())

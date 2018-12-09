@@ -32,19 +32,19 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation kotlinDeps.common
+                implementation commonDeps.kotlinCommon
             }
         }
         commonTest {
             dependencies {
-                implementation kotlinTestDeps.annotations
-                implementation kotlinTestDeps.test
-                implementation kotlinTestDeps.mock
+                implementation commonTestDeps.annotations
+                implementation commonTestDeps.test
+                implementation commonTestDeps.mock
             }
         }
         androidMain {
             dependencies {
-                implementation kotlinDeps.jvm
+                implementation commonDeps.kotlinJvm
             }
         }
         androidTest {

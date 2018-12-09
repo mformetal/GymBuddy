@@ -1,11 +1,6 @@
 package mformetal.gymbuddy.home
 
-import expectations.TextWidget
-import expectations.Widget
-import expectations.body
+interface HomeViewController {
 
-@Suppress("MemberVisibilityCanBePrivate")
-abstract class HomeViewController {
-
-    abstract fun createView(any: Any) : Widget
+    fun render(homeState: HomeState)
 }
