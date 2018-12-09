@@ -1,3 +1,6 @@
 package mformetal.gymbuddy.home
 
-data class HomeState(val counter: Int = 0, val text: String = "Hello, $counter times!")
+import mformetal.gymbuddy.time.Date
+
+data class HomeState(val currentMonthYearText: String,
+                     val currentMonthDate: Date)

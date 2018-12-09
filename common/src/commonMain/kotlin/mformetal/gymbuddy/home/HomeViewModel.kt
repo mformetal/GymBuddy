@@ -9,11 +9,6 @@ import mformetal.gymbuddy.time.formatWith
 class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>,
                     private val store: SimpleStore<HomeState>) {
 
-    val currentMonthYearString : String = {
-        val today = dateAtToday()
-        today.formatWith("MMMM yyyy")
-    }()
-
     fun listen(listener: Store.Listener<HomeState>) {
         store.addListener(listener)
     }
@@ -22,11 +17,15 @@ class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>
         store.removeListener(listener)
     }
 
-    fun onDaySelected(day: Int, month: Int, year: Int) {
-
+    fun goToNextMonth() {
+        dispatcher.dispatch(HomeActions.NextClicked)
     }
 
-    fun onMonthChanged(month: Int, year: Int) {
+    fun goToPreviousMonth() {
+        dispatcher.dispatch(HomeActions.PrevClicked)
+    }
 
+    fun jumpToToday() {
+        dispatcher.dispatch(HomeActions.JumpToToday)
     }
 }

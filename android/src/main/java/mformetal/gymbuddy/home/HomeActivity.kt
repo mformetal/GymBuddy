@@ -16,7 +16,7 @@ class HomeActivity : ComponentActivity() {
         val reducer = HomeReducer()
         val dispatcher = Dispatcher.forStore(store, reducer)
         val viewModel = HomeViewModel(dispatcher, store)
-        val controller = AndroidHomeViewController(viewModel).also {
+        val controller = HomeViewController(viewModel).also {
             it.setContentView(this)
         }
         delegate = HomeDelegate(viewModel, controller)

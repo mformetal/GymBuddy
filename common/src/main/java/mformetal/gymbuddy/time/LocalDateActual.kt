@@ -9,3 +9,7 @@ actual fun LocalDate.formatWith(formatter: DateTimeFormatter): String = format(f
 actual fun Date.formatWith(pattern: String): String = formatWith(createFormatter(pattern))
 
 actual fun dateAtToday(): Date = LocalDate.now()
+
+actual fun Date.addMonths(monthsToAdd: Long): Date = plusMonths(monthsToAdd)
+
+actual fun Date.minusMonths(monthsToSubtract: Long): Date = minusMonths(monthsToSubtract)

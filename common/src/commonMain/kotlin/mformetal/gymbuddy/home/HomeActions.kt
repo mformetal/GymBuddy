@@ -2,5 +2,9 @@ package mformetal.gymbuddy.home
 
 sealed class HomeActions {
 
-    object CounterClicked : HomeActions()
+    object NextClicked : HomeActions()
+
+    object PrevClicked : HomeActions()
+
+    object JumpToToday : HomeActions()
 }

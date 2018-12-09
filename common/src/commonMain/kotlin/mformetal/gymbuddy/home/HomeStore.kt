@@ -1,5 +1,13 @@
 package mformetal.gymbuddy.home
 
 import mformetal.gymbuddy.kedux.SimpleStore
+import mformetal.gymbuddy.time.dateAtToday
+import mformetal.gymbuddy.time.formatWith
 
-class HomeStore : SimpleStore<HomeState>(initialState = HomeState())
+fun createInitialState() : HomeState {
+    val today = dateAtToday()
+    val formattedDate = today.formatWith("MMMM yyyy")
+    return HomeState(currentMonthDate = today, currentMonthYearText = formattedDate)
+}
+
+class HomeStore : SimpleStore<HomeState>(initialState = createInitialState())

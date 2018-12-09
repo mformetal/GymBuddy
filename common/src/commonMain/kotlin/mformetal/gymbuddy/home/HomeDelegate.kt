@@ -1,9 +1,10 @@
 package mformetal.gymbuddy.home
 
 import mformetal.gymbuddy.kedux.Store
+import mformetal.gymbuddy.kedux.ViewController
 
 class HomeDelegate(private val viewModel: HomeViewModel,
-                   private val viewController: HomeViewController) {
+                   private val controller: ViewController<HomeState>) {
 
     fun onViewLoaded() {
         viewModel.listen(listener)
@@ -15,7 +16,7 @@ class HomeDelegate(private val viewModel: HomeViewModel,
 
     private val listener : Store.Listener<HomeState> = object : Store.Listener<HomeState> {
         override fun onNewState(state: HomeState) {
-            viewController.render(state)
+            controller.render(state)
         }
     }
 }
