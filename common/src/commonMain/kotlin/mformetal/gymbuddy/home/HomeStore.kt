@@ -1,12 +1,12 @@
 package mformetal.gymbuddy.home
 
+import com.soywiz.klock.DateTime
+import mformetal.gymbuddy.extensions.formatAsMonthYear
 import mformetal.gymbuddy.kedux.SimpleStore
-import mformetal.gymbuddy.time.dateAtToday
-import mformetal.gymbuddy.time.formatWith
 
 fun createInitialState() : HomeState {
-    val today = dateAtToday()
-    val formattedDate = today.formatWith("MMMM yyyy")
+    val today = DateTime.now()
+    val formattedDate = today.formatAsMonthYear()
     return HomeState(currentMonthDate = today, currentMonthYearText = formattedDate)
 }
 

@@ -3,8 +3,6 @@ package mformetal.gymbuddy.home
 import mformetal.gymbuddy.kedux.Dispatcher
 import mformetal.gymbuddy.kedux.SimpleStore
 import mformetal.gymbuddy.kedux.Store
-import mformetal.gymbuddy.time.dateAtToday
-import mformetal.gymbuddy.time.formatWith
 
 class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>,
                     private val store: SimpleStore<HomeState>) {

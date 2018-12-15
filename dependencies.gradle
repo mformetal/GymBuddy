@@ -4,7 +4,8 @@ ext {
 
     commonDeps = [
             kotlinCommon : "org.jetbrains.kotlin:kotlin-stdlib-common",
-            kotlinJvm : "org.jetbrains.kotlin:kotlin-stdlib"
+            kotlinJvm : "org.jetbrains.kotlin:kotlin-stdlib", 
+            klock  : "com.soywiz:klock:1.0.0"
     ]
 
     commonTestDeps = [
