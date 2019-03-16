@@ -3,6 +3,7 @@ package mformetal.gymbuddy
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.squareup.leakcanary.LeakCanary
+import mformetal.gymbuddy.extensions.takeIfFalse
 
 class App : Application() {
 
@@ -14,8 +15,9 @@ class App : Application() {
         AndroidThreeTen.init(this)
     }
 
-    fun initLeakCanary() {
-        if (LeakCanary.isInAnalyzerProcess(this)) return
-        LeakCanary.install(this)
+    private fun initLeakCanary() {
+        LeakCanary.isInAnalyzerProcess(this).takeIfFalse {
+            LeakCanary.install(this)
+        }
     }
 }

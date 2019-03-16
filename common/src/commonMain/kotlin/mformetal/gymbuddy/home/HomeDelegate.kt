@@ -4,13 +4,13 @@ import mformetal.gymbuddy.kedux.Store
 import mformetal.gymbuddy.kedux.ViewController
 
 class HomeDelegate(private val viewModel: HomeViewModel,
-                   private val controller: ViewController<HomeState>) {
+                   private val controller: ViewController<HomeState>) : ComponentDelegate {
 
-    fun onViewLoaded() {
+    override fun onViewLoaded() {
         viewModel.listen(listener)
     }
 
-    fun onViewDestroyed() {
+    override fun onViewDestroyed() {
         viewModel.ignore(listener)
     }
 

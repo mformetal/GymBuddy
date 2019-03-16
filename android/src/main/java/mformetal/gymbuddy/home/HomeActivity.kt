@@ -2,16 +2,16 @@ package mformetal.gymbuddy.home
 
 import android.os.Bundle
 import androidx.core.app.ComponentActivity
+import mformetal.gymbuddy.DelegateActivity
+import mformetal.gymbuddy.R
 import mformetal.gymbuddy.kedux.Dispatcher
 import org.jetbrains.anko.setContentView
 
-class HomeActivity : ComponentActivity() {
+class HomeActivity : DelegateActivity<HomeDelegate>() {
 
-    private lateinit var delegate: HomeDelegate
+    override fun layoutId(): Int = R.layout.home
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun provide(): HomeDelegate {
         val store = HomeStore()
         val reducer = HomeReducer()
         val dispatcher = Dispatcher.forStore(store, reducer)
@@ -19,14 +19,6 @@ class HomeActivity : ComponentActivity() {
         val controller = HomeViewController(viewModel).also {
             it.setContentView(this)
         }
-        delegate = HomeDelegate(viewModel, controller)
-
-        delegate.onViewLoaded()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        delegate.onViewDestroyed()
+        return HomeDelegate(viewModel, controller)
     }
 }
