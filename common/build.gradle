@@ -32,16 +32,6 @@ kotlin {
                 implementation commonDeps.kotlinJvm
             }
         }
-        androidRelease {
-            dependencies {
-                implementation androidDeps.releaseLeakCanary
-            }
-        }
-        androidDebug {
-            dependencies {
-                implementation androidDeps.debugLeakCanary
-            }
-        }
         androidTest {
             dependencies {
                 implementation androidTestDeps.junit
