@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.kedux
+package mformetal.kedux
 
 /**
  * A thread-safe store that allows you to attach and remove listeners for when the state changes.

@@ -8,7 +8,6 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation project(':common-arch')
                 implementation commonDeps.klock
                 implementation commonDeps.kotlinCommon
                 implementation commonDeps.di
@@ -16,7 +15,7 @@ kotlin {
         }
         commonTest {
             dependencies {
-                implementation project(':common-test')
+                implementation project(":common-test")
                 implementation commonTestDeps.annotations
                 implementation commonTestDeps.test
                 implementation commonTestDeps.mock
@@ -29,7 +28,7 @@ kotlin {
         }
         androidTest {
             dependencies {
-                implementation project(':common-test')
+                implementation project(":common-test")
                 implementation androidTestDeps.junit
                 implementation androidTestDeps.mock
             }

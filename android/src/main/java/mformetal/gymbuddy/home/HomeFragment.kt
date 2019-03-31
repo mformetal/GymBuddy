@@ -1,9 +1,8 @@
 package mformetal.gymbuddy.home
 
-import androidx.fragment.app.Fragment
 import mformetal.gymbuddy.R
 import mformetal.gymbuddy.base.android.DelegateFragment
-import mformetal.gymbuddy.kedux.Dispatcher
+import mformetal.kedux.Dispatcher
 
 class HomeFragment : DelegateFragment<HomeDelegate, HomeViewController>() {
 

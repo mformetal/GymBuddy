@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import mformetal.gymbuddy.kedux.ComponentDelegate
+import mformetal.kedux.ComponentDelegate
 import mformetal.gymbuddy.viewbinding.AndroidViewFinder
 import mformetal.gymbuddy.viewbinding.ViewController
 

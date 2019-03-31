@@ -1,7 +1,9 @@
-package mformetal.gymbuddy.kedux
+package mformetal.kedux
 
 import io.mockk.mockk
 import io.mockk.verify
+import mformetal.kedux.SimpleStore
+import mformetal.kedux.Store
 import kotlin.test.Test
 
 class SimpleStoreTest {

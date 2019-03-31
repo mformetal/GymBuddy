@@ -2,7 +2,7 @@ package mformetal.gymbuddy.home
 
 import com.soywiz.klock.DateTime
 import mformetal.gymbuddy.extensions.formatAsMonthYear
-import mformetal.gymbuddy.kedux.SimpleStore
+import mformetal.kedux.SimpleStore
 
 fun createInitialState() : HomeState {
     val today = DateTime.now()

@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.kedux
+package mformetal.kedux
 
 /**
  * Stores your immutable state and allows you to dispatch actions to change it. Note: if you plan

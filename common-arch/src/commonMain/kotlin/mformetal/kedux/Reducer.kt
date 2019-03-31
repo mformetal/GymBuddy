@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.kedux
+package mformetal.kedux
 
 /**
  * A reducer takes in an action and the current state and returns a new state as a result. The

@@ -1,17 +1,19 @@
-package mformetal.gymbuddy.kedux
+package mformetal.kedux
 
 import io.mockk.*
-import mformetal.gymbuddy.kedux.middleware.Middleware
-import mformetal.gymbuddy.utils.mock
+import mformetal.kedux.Middleware
+import mformetal.kedux.Dispatcher
+import mformetal.kedux.Reducer
+import mformetal.kedux.SimpleStore
 import kotlin.test.Test
 
 class DispatchersTest {
 
     val initialState = "bro"
-    val store = mock<SimpleStore<String>> {
+    val store = mockk<SimpleStore<String>> {
         every { state } returns initialState
     }
-    val reducer = mock<Reducer<String, String>> {
+    val reducer = mockk<Reducer<String, String>> {
         every { reduce(any(), any()) } returns "brah"
     }
 
@@ -30,7 +32,7 @@ class DispatchersTest {
 
     @Test
     fun `should run chained middleware`() {
-        val middleWare = mock<Middleware<String, String>>()
+        val middleWare = mockk<Middleware<String, String>>()
         val chainedDispatcher = spyk(dispatcher.chain(middleWare))
 
         val action = "thing"
@@ -43,7 +45,7 @@ class DispatchersTest {
 
     @Test
     fun `should give next middleware upated state from dispatcher`() {
-        val middleWare = mock<Middleware<String, String>>()
+        val middleWare = mockk<Middleware<String, String>>()
         val chainedDispatcher = spyk(dispatcher.chain(middleWare))
 
         val action = "thing"

@@ -12,4 +12,6 @@ rootProject.name = 'gymbuddy'
 enableFeaturePreview("GRADLE_METADATA")
 
 include ':common'
+include ':common-arch'
+include ':common-test'
 include ':android'

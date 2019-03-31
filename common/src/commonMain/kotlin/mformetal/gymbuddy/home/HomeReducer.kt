@@ -1,10 +1,9 @@
 package mformetal.gymbuddy.home
 
-import com.soywiz.klock.DateFormat
 import com.soywiz.klock.DateTime
 import com.soywiz.klock.months
 import mformetal.gymbuddy.extensions.formatAsMonthYear
-import mformetal.gymbuddy.kedux.Reducer
+import mformetal.kedux.Reducer
 
 class HomeReducer : Reducer<HomeActions, HomeState> {
     override fun reduce(action: HomeActions, state: HomeState): HomeState {

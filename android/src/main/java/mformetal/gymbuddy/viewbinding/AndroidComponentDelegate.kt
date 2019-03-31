@@ -1,6 +1,6 @@
 package mformetal.gymbuddy.viewbinding
 
-import mformetal.gymbuddy.kedux.ComponentDelegate
+import mformetal.kedux.ComponentDelegate
 
 abstract class AndroidComponentDelegate : ComponentDelegate {
 

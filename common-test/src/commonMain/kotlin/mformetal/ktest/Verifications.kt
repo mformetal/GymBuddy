@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.utils
+package mformetal.ktest
 
 import io.mockk.verify
 
