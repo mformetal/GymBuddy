@@ -3,7 +3,7 @@ package mformetal.gymbuddy
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.core.app.ComponentActivity
-import mformetal.gymbuddy.home.ComponentDelegate
+import mformetal.gymbuddy.kedux.ComponentDelegate
 
 abstract class DelegateActivity<D : ComponentDelegate> : ComponentActivity() {
 
@@ -17,9 +17,9 @@ abstract class DelegateActivity<D : ComponentDelegate> : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        delegate = provide().also {
-            setContentView(layoutId())
+        setContentView(layoutId())
 
+        delegate = provide().also {
             it.onViewLoaded()
         }
     }

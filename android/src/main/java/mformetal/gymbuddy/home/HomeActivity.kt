@@ -5,7 +5,6 @@ import androidx.core.app.ComponentActivity
 import mformetal.gymbuddy.DelegateActivity
 import mformetal.gymbuddy.R
 import mformetal.gymbuddy.kedux.Dispatcher
-import org.jetbrains.anko.setContentView
 
 class HomeActivity : DelegateActivity<HomeDelegate>() {
 
@@ -16,9 +15,7 @@ class HomeActivity : DelegateActivity<HomeDelegate>() {
         val reducer = HomeReducer()
         val dispatcher = Dispatcher.forStore(store, reducer)
         val viewModel = HomeViewModel(dispatcher, store)
-        val controller = HomeViewController(viewModel).also {
-            it.setContentView(this)
-        }
+        val controller = HomeViewController(viewModel)
         return HomeDelegate(viewModel, controller)
     }
 }

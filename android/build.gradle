@@ -26,7 +26,7 @@ dependencies {
     
     implementation androidDeps.androidx
     implementation androidDeps.constraint
-    implementation androidDeps.anko
+    implementation androidDeps.design
     
     debugImplementation androidDeps.debugLeakCanary
     releaseImplementation androidDeps.releaseLeakCanary

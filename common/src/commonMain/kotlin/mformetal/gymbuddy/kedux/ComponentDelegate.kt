@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.home
+package mformetal.gymbuddy.kedux
 
 interface ComponentDelegate {
 
