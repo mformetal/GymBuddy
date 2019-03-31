@@ -1,8 +1,0 @@
-<manifest
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		package="mformetal.gymbuddy.lib" >
-		
-		<application
-				android:name="mformetal.gymbuddy.App" />
-		
-</manifest>
