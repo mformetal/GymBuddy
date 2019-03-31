@@ -8,7 +8,7 @@ import mformetal.gymbuddy.extensions.takeIfNull
 import mformetal.gymbuddy.home.*
 import mformetal.gymbuddy.kedux.Dispatcher
 
-class HomeActivity : FragmentActivity() {
+class RootActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

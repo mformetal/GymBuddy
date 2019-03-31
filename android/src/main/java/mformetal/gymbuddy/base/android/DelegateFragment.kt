@@ -7,25 +7,32 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import mformetal.gymbuddy.kedux.ComponentDelegate
+import mformetal.gymbuddy.viewbinding.AndroidViewFinder
+import mformetal.gymbuddy.viewbinding.ViewController
 
-abstract class DelegateFragment<D : ComponentDelegate> : Fragment() {
+abstract class DelegateFragment<D : ComponentDelegate, C: ViewController> : Fragment() {
 
     private lateinit var delegate: D
+    private lateinit var controller: C
 
-    abstract fun provide() : D
+    abstract fun controller() : C
+
+    abstract fun delegate() : D
 
     @LayoutRes
     abstract fun layoutId() : Int
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(layoutId(), container, false).also {
+                controller.bind(AndroidViewFinder(it))
+
                 delegate.onViewLoaded()
             }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        delegate = provide()
+        delegate = delegate()
     }
 
     override fun onDestroy() {
