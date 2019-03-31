@@ -23,8 +23,10 @@ abstract class DelegateFragment<D : ComponentDelegate, C: ViewController> : Frag
     abstract fun layoutId() : Int
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-            inflater.inflate(layoutId(), container, false).also {
-                controller.bind(AndroidViewFinder(it))
+            inflater.inflate(layoutId(), container, false).also { view ->
+                controller = controller().apply {
+                    bind(AndroidViewFinder(view))
+                }
 
                 delegate.onViewLoaded()
             }
