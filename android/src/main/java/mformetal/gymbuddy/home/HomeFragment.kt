@@ -1,12 +1,15 @@
 package mformetal.gymbuddy.home
 
-import android.os.Bundle
-import androidx.core.app.ComponentActivity
-import mformetal.gymbuddy.DelegateActivity
+import androidx.fragment.app.Fragment
 import mformetal.gymbuddy.R
+import mformetal.gymbuddy.base.android.DelegateFragment
 import mformetal.gymbuddy.kedux.Dispatcher
 
-class HomeActivity : DelegateActivity<HomeDelegate>() {
+class HomeFragment : DelegateFragment<HomeDelegate>() {
+
+    companion object {
+        fun newInstance() = HomeFragment()
+    }
 
     override fun layoutId(): Int = R.layout.home
 

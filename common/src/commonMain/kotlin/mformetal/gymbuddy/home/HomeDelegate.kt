@@ -7,16 +7,10 @@ class HomeDelegate(private val viewModel: HomeViewModel,
                    private val controller: Store.Listener<HomeState>) : ComponentDelegate {
 
     override fun onViewLoaded() {
-        viewModel.listen(listener)
+        viewModel.listen(controller)
     }
 
     override fun onViewDestroyed() {
-        viewModel.ignore(listener)
-    }
-
-    private val listener : Store.Listener<HomeState> = object : Store.Listener<HomeState> {
-        override fun onNewState(state: HomeState) {
-            controller.onNewState(state)
-        }
+        viewModel.ignore(controller)
     }
 }

@@ -8,7 +8,7 @@ import kotlin.reflect.KProperty
 
 class DelegatedViewPropertyProvider {
 
-    var viewFinder: ViewFinder? = null
+    protected var viewFinder: ViewFinder? = null
 
     fun bind(viewFinder: ViewFinder) {
         this.viewFinder = viewFinder
@@ -17,7 +17,7 @@ class DelegatedViewPropertyProvider {
     fun <T : View> find(id: Int, viewClass: KClass<T>): ReadOnlyProperty<Any, T> =
             ViewInjectionProperty(id, viewClass)
 
-    internal inner class ViewInjectionProperty<T : View>(
+    protected inner class ViewInjectionProperty<T : View>(
             @IdRes private val id: Int,
             private val viewClass: KClass<T>
     ) :

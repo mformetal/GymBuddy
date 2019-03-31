@@ -1,4 +1,4 @@
-package mformetal.gymbuddy
+package mformetal.gymbuddy.base.android
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

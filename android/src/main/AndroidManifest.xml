@@ -12,7 +12,7 @@
 				android:theme="@style/AppTheme" >
 				
 				<activity
-						android:name="mformetal.gymbuddy.home.HomeActivity" >
+						android:name="mformetal.gymbuddy.HomeActivity" >
 						<intent-filter>
 								<action android:name="android.intent.action.MAIN" />
 								<category android:name="android.intent.category.LAUNCHER" />

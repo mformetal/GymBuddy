@@ -17,6 +17,7 @@ kotlin {
             dependencies {
                 implementation commonDeps.klock
                 implementation commonDeps.kotlinCommon
+                implementation commonDeps.di
             }
         }
         commonTest {
@@ -43,8 +44,8 @@ kotlin {
         }
         androidTest {
             dependencies {
-                implementation androidDeps.junit
-                implementation androidDeps.mock
+                implementation androidTestDeps.junit
+                implementation androidTestDeps.mock
             }
         }
     }

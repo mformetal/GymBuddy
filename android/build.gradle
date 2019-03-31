@@ -22,7 +22,6 @@ dependencies {
     implementation project(":common")
 
     implementation androidDeps.kotlin
-    implementation androidDeps.date
     
     implementation androidDeps.androidx
     implementation androidDeps.constraint
@@ -30,4 +29,7 @@ dependencies {
     
     debugImplementation androidDeps.debugLeakCanary
     releaseImplementation androidDeps.releaseLeakCanary
+
+    testImplementation androidTestDeps.junit
+    testImplementation androidTestDeps.mock
 }
