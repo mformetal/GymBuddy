@@ -1,8 +1,8 @@
 package mformetal.gymbuddy.home
 
-import mformetal.kedux.Dispatcher
-import mformetal.kedux.SimpleStore
-import mformetal.kedux.Store
+import mformetal.gymbuddy.kedux.Dispatcher
+import mformetal.gymbuddy.kedux.SimpleStore
+import mformetal.gymbuddy.kedux.Store
 
 class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>,
                     private val store: SimpleStore<HomeState>) {

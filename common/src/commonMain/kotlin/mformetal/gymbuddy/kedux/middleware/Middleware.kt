@@ -1,4 +1,4 @@
-package mformetal.kedux
+package mformetal.gymbuddy.kedux.middleware
 
 /**
  * Middleware allows you to implement cross-cutting concerns like logging, crash reporting, etc. by

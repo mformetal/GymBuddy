@@ -1,4 +1,6 @@
-package mformetal.kedux
+package mformetal.gymbuddy.kedux
+
+import mformetal.gymbuddy.kedux.middleware.Middleware
 
 /**
  * Dispatches actions with [Reducer]s and updates the state in the [Store]. You can chain [Middleware]
@@ -15,7 +17,7 @@ abstract class Dispatcher<A, R> {
     abstract fun dispatch(action: A): R
 
     /**
-     * Returns a new [Dispatcher] that runs the given [Middleware].
+     * Returns a new `Dispatcher` that runs the given [Middleware].
      */
     fun chain(middleware: Middleware<A, R>): Dispatcher<A, R> {
         return object : Dispatcher<A, R>() {
@@ -43,7 +45,7 @@ abstract class Dispatcher<A, R> {
         return chain(*middleware)
     }
 
-    fun chain(itr: Iterator<Middleware<A, R>>): Dispatcher<A, R> {
+    private fun chain(itr: Iterator<Middleware<A, R>>): Dispatcher<A, R> {
         return if (itr.hasNext()) {
             chain(itr.next()).chain(itr)
         } else {

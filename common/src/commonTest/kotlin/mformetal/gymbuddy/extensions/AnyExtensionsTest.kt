@@ -1,9 +1,10 @@
 package mformetal.gymbuddy.extensions
 
+import io.mockk.verify
+import mformetal.gymbuddy.utils.mock
+import mformetal.gymbuddy.utils.never
+import mformetal.gymbuddy.utils.once
 import kotlin.test.Test
-import mformetal.ktest.mock
-import mformetal.ktest.once
-import mformetal.ktest.never
 
 class AnyExtensionsTest {
 

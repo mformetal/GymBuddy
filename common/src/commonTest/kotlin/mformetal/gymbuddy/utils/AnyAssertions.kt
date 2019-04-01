@@ -1,4 +1,4 @@
-package mformetal.ktest
+package mformetal.gymbuddy.utils
 
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull

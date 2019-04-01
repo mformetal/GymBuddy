@@ -1,10 +1,10 @@
 import io.mockk.verify
 import mformetal.gymbuddy.extensions.takeIfFalse
+import mformetal.gymbuddy.utils.assertEmpty
+import mformetal.gymbuddy.utils.assertNull
+import mformetal.gymbuddy.utils.assertPresent
+import mformetal.gymbuddy.utils.mock
 import kotlin.test.Test
-
-import mformetal.ktest.assertPresent
-import mformetal.ktest.assertNull
-import mformetal.ktest.assertEmpty
 
 class BooleanExtensionsTest {
 
