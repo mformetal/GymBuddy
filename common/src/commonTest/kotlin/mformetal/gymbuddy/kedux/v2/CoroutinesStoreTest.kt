@@ -1,12 +1,11 @@
 package mformetal.gymbuddy.kedux.v2
 
-import io.mockk.Ordering
-import io.mockk.verify
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
-import mformetal.gymbuddy.expectations.runTest
+import mformetal.gymbuddy.expectations.launchBackground
+import mformetal.gymbuddy.expectations.launchBlocking
 import mformetal.gymbuddy.utils.assertNull
-import mformetal.gymbuddy.utils.assertTrue
-import mformetal.gymbuddy.utils.mock
 import mformetal.gymbuddy.utils.shouldEqual
 import kotlin.test.Test
 
@@ -21,7 +20,7 @@ class CoroutinesStoreTest {
     }
 
     @Test
-    fun `should update state`() = runTest {
+    fun `should update state`() = launchBlocking {
         val newState = "newState"
 
         store.update(newState)
@@ -49,5 +48,15 @@ class CoroutinesStoreTest {
         store.update(newState)
 
         receiveChannel.poll().assertNull()
+    }
+
+    @Test
+    fun `should receive initial state when subscribed`() = launchBlocking { scope ->
+        store.subscribe().apply {
+            consumeEach { state ->
+                state shouldEqual initialState
+                cancel()
+            }
+        }
     }
 }
