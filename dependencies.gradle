@@ -15,6 +15,13 @@ ext {
             test : "org.jetbrains.kotlin:kotlin-test-common",
             mock : "io.mockk:mockk-common:$mockVersion"
     ]
+    
+    jvmDeps = [
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines",
+            kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            junit : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
+            mock : "io.mockk:mockk:$mockVersion"
+    ]
 
     leakCanaryVersion = '1.6.2'
     supportDesign = '28.0.0'
@@ -26,11 +33,6 @@ ext {
             debugLeakCanary : "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion",
             releaseLeakCanary : "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion",
             kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
-            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
-    ]
-
-    androidTestDeps = [
-            junit : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
-            mock : "io.mockk:mockk:$mockVersion"
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
     ]
 }

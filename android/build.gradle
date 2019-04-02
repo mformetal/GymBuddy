@@ -22,14 +22,16 @@ dependencies {
     implementation project(":common")
 
     implementation androidDeps.kotlin
+    implementation androidDeps.coroutines
     
     implementation androidDeps.androidx
     implementation androidDeps.constraint
     implementation androidDeps.design
+    implementation androidDeps.coroutines
     
     debugImplementation androidDeps.debugLeakCanary
     releaseImplementation androidDeps.releaseLeakCanary
 
-    testImplementation androidTestDeps.junit
-    testImplementation androidTestDeps.mock
+    testImplementation jvmDeps.junit
+    testImplementation jvmDeps.mock
 }

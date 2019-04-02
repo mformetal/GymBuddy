@@ -1,7 +1,11 @@
 package mformetal.gymbuddy.expectations
 
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 
-expect fun launchBlocking(block: suspend (scope : CoroutineScope) -> Unit)
+expect fun runTest(block: suspend (scope : CoroutineScope) -> Unit)
 
-expect fun launchBackground(block: suspend (scope: CoroutineScope) -> Unit)
+expect object ExpectedDispatchers {
+    val io : CoroutineDispatcher
+    val ui : CoroutineDispatcher
+}

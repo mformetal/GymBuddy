@@ -22,14 +22,14 @@ kotlin {
         }
         androidMain {
             dependencies {
-                implementation androidDeps.coroutines
-                implementation commonDeps.kotlinJvm
+                implementation jvmDeps.coroutines
+                implementation jvmDeps.kotlin
             }
         }
         androidTest {
             dependencies {
-                implementation androidTestDeps.junit
-                implementation androidTestDeps.mock
+                implementation jvmDeps.junit
+                implementation jvmDeps.mock
             }
         }
     }

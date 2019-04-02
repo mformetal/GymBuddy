@@ -1,29 +1,26 @@
 package mformetal.gymbuddy.kedux.v2
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.ObsoleteCoroutinesApi
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.ConflatedBroadcastChannel
-import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.consumeEach
+import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.*
+import mformetal.gymbuddy.expectations.ExpectedDispatchers
+import mformetal.gymbuddy.expectations.createActor
 import mformetal.gymbuddy.kedux.Store
 import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
 
 @ExperimentalCoroutinesApi
 @ObsoleteCoroutinesApi
 class CoroutinesStore<S : Any>(initialState: S) {
 
-    private val stateStream = ConflatedBroadcastChannel<S>().apply {
+    private val stateChannel = Channel<S>(Channel.UNLIMITED).apply {
         offer(initialState)
     }
 
-    val state : S
-        get() = stateStream.value
+    suspend fun observe(onStateReceived: suspend (S) -> Unit) {
+        stateChannel.consumeEach { newState ->
+            onStateReceived(newState)
+        }
+    }
 
-    fun update(state: S) = stateStream.offer(state)
-
-    fun subscribe() : ReceiveChannel<S> = stateStream.openSubscription()
-
+    fun update(state: S) = stateChannel.offer(state)
 }
