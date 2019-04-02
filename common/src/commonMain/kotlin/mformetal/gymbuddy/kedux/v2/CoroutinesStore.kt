@@ -12,6 +12,7 @@ import mformetal.gymbuddy.kedux.Store
 import kotlin.coroutines.CoroutineContext
 
 @ExperimentalCoroutinesApi
+@ObsoleteCoroutinesApi
 class CoroutinesStore<S : Any>(initialState: S) {
 
     private val stateStream = ConflatedBroadcastChannel<S>().apply {
@@ -21,7 +22,8 @@ class CoroutinesStore<S : Any>(initialState: S) {
     val state : S
         get() = stateStream.value
 
-    suspend fun update(state: S) = stateStream.send(state)
+    fun update(state: S) = stateStream.offer(state)
 
+    fun subscribe() : ReceiveChannel<S> = stateStream.openSubscription()
 
 }

@@ -1,6 +1,12 @@
 package mformetal.gymbuddy.kedux.v2
 
+import io.mockk.Ordering
+import io.mockk.verify
+import kotlinx.coroutines.channels.consumeEach
 import mformetal.gymbuddy.expectations.runTest
+import mformetal.gymbuddy.utils.assertNull
+import mformetal.gymbuddy.utils.assertTrue
+import mformetal.gymbuddy.utils.mock
 import mformetal.gymbuddy.utils.shouldEqual
 import kotlin.test.Test
 
@@ -21,5 +27,27 @@ class CoroutinesStoreTest {
         store.update(newState)
 
         store.state shouldEqual newState
+    }
+
+    @Test
+    fun `should receive state updates`() {
+        val newState = "a"
+        val receiveChannel = store.subscribe()
+
+        store.update(newState)
+
+        receiveChannel.poll() shouldEqual newState
+    }
+
+    @Test
+    fun `should not receive state updates if channel is closed`() {
+        val newState = "a"
+        val receiveChannel = store.subscribe().apply {
+            cancel()
+        }
+
+        store.update(newState)
+
+        receiveChannel.poll().assertNull()
     }
 }
