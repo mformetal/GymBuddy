@@ -3,9 +3,12 @@ package mformetal.gymbuddy.kedux.v2
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
+import kotlinx.coroutines.channels.consumeEachIndexed
+import kotlinx.coroutines.channels.last
 import mformetal.gymbuddy.expectations.launchBackground
 import mformetal.gymbuddy.expectations.launchBlocking
 import mformetal.gymbuddy.utils.assertNull
+import mformetal.gymbuddy.utils.assertTrue
 import mformetal.gymbuddy.utils.shouldEqual
 import kotlin.test.Test
 
@@ -20,7 +23,7 @@ class CoroutinesStoreTest {
     }
 
     @Test
-    fun `should update state`() = launchBlocking {
+    fun `should update state`() {
         val newState = "newState"
 
         store.update(newState)
@@ -55,6 +58,22 @@ class CoroutinesStoreTest {
         store.subscribe().apply {
             consumeEach { state ->
                 state shouldEqual initialState
+                cancel()
+            }
+        }
+    }
+
+    @Test
+    fun `should receive additional state updates`() = launchBlocking { scope ->
+        val newStates = listOf("a", "b", "c")
+
+        newStates.forEach { newState ->
+            store.update(newState)
+        }
+
+        store.subscribe().apply {
+            consumeEachIndexed { indexed ->
+                indexed.value shouldEqual newStates[2 - indexed.index]
                 cancel()
             }
         }
