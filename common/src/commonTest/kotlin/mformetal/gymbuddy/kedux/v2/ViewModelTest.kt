@@ -3,6 +3,8 @@ package mformetal.gymbuddy.kedux.v2
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.ReceiveChannel
+import mformetal.gymbuddy.kedux.v2.arch.Store
+import mformetal.gymbuddy.kedux.v2.arch.ViewModel
 import mformetal.gymbuddy.utils.mock
 import kotlin.test.Test
 

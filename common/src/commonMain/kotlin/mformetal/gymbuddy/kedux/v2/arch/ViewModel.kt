@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.kedux.v2
+package mformetal.gymbuddy.kedux.v2.arch
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
@@ -9,12 +9,11 @@ class ViewModel<S : Any>(private val store: Store<S>,
                          private val mainDispatcher: CoroutineDispatcher,
                          ioDispatcher: CoroutineDispatcher) : CoroutineScope by ViewModelScope(ioDispatcher) {
 
-    private val channel: ReceiveChannel<S> ?= null
-    private var job: Job ?= null
+    private var job : Job ?= null
 
     fun start(onStateChanged: (S) -> Unit) {
         job = launch {
-            store.receiveChannel
+            store.states
                     .distinct()
                     .consumeEach { newState ->
                         withContext(mainDispatcher) {
@@ -25,8 +24,8 @@ class ViewModel<S : Any>(private val store: Store<S>,
     }
 
     fun stop() {
-        channel?.cancel()
         job?.cancel()
+        job = Job()
     }
 
     fun destroy() {

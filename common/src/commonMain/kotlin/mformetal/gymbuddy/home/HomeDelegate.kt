@@ -1,6 +1,6 @@
 package mformetal.gymbuddy.home
 
-import mformetal.gymbuddy.kedux.ComponentDelegate
+import mformetal.gymbuddy.kedux.v2.presentation.ComponentDelegate
 import mformetal.gymbuddy.kedux.Store
 
 class HomeDelegate(private val viewModel: HomeViewModel,

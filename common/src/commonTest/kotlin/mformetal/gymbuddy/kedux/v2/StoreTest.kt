@@ -1,5 +1,6 @@
 package mformetal.gymbuddy.kedux.v2
 
+import mformetal.gymbuddy.kedux.v2.arch.Store
 import mformetal.gymbuddy.utils.shouldEqual
 import kotlin.test.Test
 

@@ -7,8 +7,8 @@ import android.util.Log
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import kotlinx.coroutines.Dispatchers
-import mformetal.gymbuddy.kedux.v2.Store
-import mformetal.gymbuddy.kedux.v2.ViewModel
+import mformetal.gymbuddy.kedux.v2.arch.Store
+import mformetal.gymbuddy.kedux.v2.arch.ViewModel
 
 class RootActivity : FragmentActivity() {
 
@@ -31,6 +31,7 @@ class RootActivity : FragmentActivity() {
         object : CountDownTimer(1000, 1) {
             override fun onFinish() {
                 store.update("FINISH")
+                vm.stop()
             }
 
             override fun onTick(millisUntilFinished: Long) {
@@ -45,7 +46,7 @@ class RootActivity : FragmentActivity() {
 
         Handler().postDelayed(Runnable {
             store.update("NEW SHIT")
-        }, 10000)
+        }, 5000)
     }
 
     override fun onStop() {
