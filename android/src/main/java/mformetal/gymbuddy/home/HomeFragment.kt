@@ -1,32 +1,27 @@
 package mformetal.gymbuddy.home
 
+import kotlinx.coroutines.Dispatchers
 import mformetal.gymbuddy.R
 import mformetal.gymbuddy.base.android.DelegateFragment
-import mformetal.gymbuddy.kedux.Dispatcher
+import mformetal.gymbuddy.kedux.arch.Store
+import mformetal.gymbuddy.kedux.presentation.ComponentController
+import mformetal.gymbuddy.kedux.state.AppState
 
-class HomeFragment : DelegateFragment<HomeDelegate, HomeViewController>() {
+class HomeFragment : DelegateFragment<AppState, HomeDelegate, HomeAndroidController>() {
 
     companion object {
         fun newInstance() = HomeFragment()
     }
 
     val viewModel by lazy {
-        val store = HomeStore()
-        val reducer = HomeReducer()
-        val dispatcher = Dispatcher.forStore(store, reducer)
-        HomeViewModel(dispatcher, store)
+        HomeViewModel(Store(AppState()), Dispatchers.Main, Dispatchers.IO)
     }
-
-    val controller by lazy {
-        HomeViewController(viewModel)
-    }
-
-    override fun controller(): HomeViewController = controller
 
     override fun layoutId(): Int = R.layout.home
 
-    override fun delegate(): HomeDelegate {
-        val controller = HomeViewController(viewModel)
+    override fun controller(): HomeAndroidController = HomeAndroidController(viewModel)
+
+    override fun delegate(controller: ComponentController<AppState>): HomeDelegate {
         return HomeDelegate(viewModel, controller)
     }
 }

@@ -7,8 +7,9 @@ import android.util.Log
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import kotlinx.coroutines.Dispatchers
-import mformetal.gymbuddy.kedux.v2.arch.Store
-import mformetal.gymbuddy.kedux.v2.arch.ViewModel
+import mformetal.gymbuddy.home.HomeFragment
+import mformetal.gymbuddy.kedux.arch.Store
+import mformetal.gymbuddy.kedux.arch.ViewModel
 
 class RootActivity : FragmentActivity() {
 
@@ -22,36 +23,10 @@ class RootActivity : FragmentActivity() {
 
         setContentView(R.layout.root)
 
-        val textView = findViewById<TextView>(R.id.test)
-
-        vm.start {
-            textView.text = it + ", " + textView.text
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                    .add(R.id.app_root, HomeFragment.newInstance())
+                    .commit()
         }
-
-        object : CountDownTimer(1000, 1) {
-            override fun onFinish() {
-                store.update("FINISH")
-                vm.stop()
-            }
-
-            override fun onTick(millisUntilFinished: Long) {
-                Log.d("WTF", "$millisUntilFinished")
-                store.update("$millisUntilFinished")
-            }
-        }.start()
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        Handler().postDelayed(Runnable {
-            store.update("NEW SHIT")
-        }, 5000)
-    }
-
-    override fun onStop() {
-        super.onStop()
-
-        store.update("ON STOP")
     }
 }

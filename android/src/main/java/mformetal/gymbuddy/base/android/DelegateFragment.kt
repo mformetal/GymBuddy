@@ -6,35 +6,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import mformetal.gymbuddy.kedux.v2.presentation.ComponentDelegate
+import mformetal.gymbuddy.kedux.presentation.ComponentController
+import mformetal.gymbuddy.kedux.presentation.ComponentDelegate
+import mformetal.gymbuddy.kedux.state.AppState
 import mformetal.gymbuddy.viewbinding.AndroidViewFinder
-import mformetal.gymbuddy.viewbinding.ViewController
+import mformetal.gymbuddy.viewbinding.AndroidController
+import mformetal.gymbuddy.viewbinding.ViewFinder
 
-abstract class DelegateFragment<D : ComponentDelegate, C: ViewController> : Fragment() {
+abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>, C: ComponentController<S>> : Fragment() {
 
     private lateinit var delegate: D
-    private lateinit var controller: C
 
     abstract fun controller() : C
 
-    abstract fun delegate() : D
+    abstract fun delegate(controller: ComponentController<S>) : D
 
     @LayoutRes
     abstract fun layoutId() : Int
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(layoutId(), container, false).also { view ->
-                controller = controller().apply {
-                    bind(AndroidViewFinder(view))
+                with (delegate) {
+                    componentController.bind(AndroidViewFinder(view))
+                    onViewCreated()
+                    listen(componentController.render)
                 }
-
-                delegate.onViewLoaded()
             }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        delegate = delegate()
+        val controller = controller()
+        delegate = delegate(controller)
     }
 
     override fun onDestroy() {

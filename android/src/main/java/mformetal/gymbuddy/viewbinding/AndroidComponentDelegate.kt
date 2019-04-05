@@ -1,8 +1,8 @@
 package mformetal.gymbuddy.viewbinding
 
-import mformetal.gymbuddy.kedux.v2.presentation.ComponentDelegate
+import mformetal.gymbuddy.kedux.presentation.ComponentDelegate
 
-abstract class AndroidComponentDelegate : ComponentDelegate {
+abstract class AndroidComponentDelegate<S : Any> : ComponentDelegate<S> {
 
     protected val delegatedViewFinder = DelegatedViewPropertyProvider()
 

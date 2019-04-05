@@ -1,16 +1,19 @@
 package mformetal.gymbuddy.home
 
-import mformetal.gymbuddy.kedux.v2.presentation.ComponentDelegate
-import mformetal.gymbuddy.kedux.Store
+import mformetal.gymbuddy.kedux.presentation.ComponentController
+import mformetal.gymbuddy.kedux.presentation.ComponentDelegate
+import mformetal.gymbuddy.kedux.state.AppState
 
 class HomeDelegate(private val viewModel: HomeViewModel,
-                   private val controller: Store.Listener<HomeState>) : ComponentDelegate {
+                   override val componentController: ComponentController<AppState>) : ComponentDelegate<AppState> {
 
-    override fun onViewLoaded() {
-        viewModel.listen(controller)
+    override fun onViewCreated() {
+
     }
 
     override fun onViewDestroyed() {
-        viewModel.ignore(controller)
+
     }
+
+    override fun listen(onStateChanged: (AppState) -> Unit) = viewModel.subscribe(onStateChanged)
 }

@@ -3,8 +3,8 @@ package mformetal.gymbuddy.kedux.v2
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.ReceiveChannel
-import mformetal.gymbuddy.kedux.v2.arch.Store
-import mformetal.gymbuddy.kedux.v2.arch.ViewModel
+import mformetal.gymbuddy.kedux.arch.Store
+import mformetal.gymbuddy.kedux.arch.ViewModel
 import mformetal.gymbuddy.utils.mock
 import kotlin.test.Test
 
@@ -23,7 +23,7 @@ class ViewModelTest {
 
     @Test
     fun `should subscribe to store`() {
-        viewModel.start(receiver)
+        viewModel.subscribe(receiver)
 
 
         verify {
@@ -33,7 +33,7 @@ class ViewModelTest {
 
     @Test
     fun `should receive state updates`() {
-        viewModel.start(receiver)
+        viewModel.subscribe(receiver)
 
         coVerify {
             store.receive().consumeEach(captureLambda())

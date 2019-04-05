@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.kedux.v2.arch
+package mformetal.gymbuddy.kedux.arch
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

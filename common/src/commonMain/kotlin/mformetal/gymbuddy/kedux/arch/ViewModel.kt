@@ -1,17 +1,17 @@
-package mformetal.gymbuddy.kedux.v2.arch
+package mformetal.gymbuddy.kedux.arch
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.channels.distinct
 
-class ViewModel<S : Any>(private val store: Store<S>,
-                         private val mainDispatcher: CoroutineDispatcher,
-                         ioDispatcher: CoroutineDispatcher) : CoroutineScope by ViewModelScope(ioDispatcher) {
+open class ViewModel<S : Any>(protected val store: Store<S>,
+                              protected val mainDispatcher: CoroutineDispatcher,
+                              protected val ioDispatcher: CoroutineDispatcher) : CoroutineScope by ViewModelScope(ioDispatcher) {
 
     private var job : Job ?= null
 
-    fun start(onStateChanged: (S) -> Unit) {
+    fun subscribe(onStateChanged: (S) -> Unit) {
         job = launch {
             store.states
                     .distinct()

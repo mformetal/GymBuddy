@@ -7,11 +7,11 @@ import mformetal.gymbuddy.utils.verifyClicks
 import org.junit.Before
 import org.junit.Test
 
-class HomeViewControllerTest {
+class HomeAndroidControllerTest {
 
     val viewModel = mockk<HomeViewModel>()
 
-    val controller = HomeViewController(viewModel)
+    val controller = HomeAndroidController(viewModel)
 
     @Before
     fun setUp() {

@@ -1,29 +1,16 @@
 package mformetal.gymbuddy.home
 
-import mformetal.gymbuddy.kedux.Dispatcher
-import mformetal.gymbuddy.kedux.SimpleStore
-import mformetal.gymbuddy.kedux.Store
+import com.soywiz.klock.DateTime
+import kotlinx.coroutines.CoroutineDispatcher
+import mformetal.gymbuddy.kedux.arch.Store
+import mformetal.gymbuddy.kedux.arch.ViewModel
+import mformetal.gymbuddy.kedux.state.AppState
 
-class HomeViewModel(private val dispatcher: Dispatcher<HomeActions, HomeActions>,
-                    private val store: SimpleStore<HomeState>) {
+class HomeViewModel(store: Store<AppState>,
+                    mainDispatcher: CoroutineDispatcher,
+                    ioDispatcher: CoroutineDispatcher) : ViewModel<AppState>(store, mainDispatcher, ioDispatcher) {
 
-    fun listen(listener: Store.Listener<HomeState>) {
-        store.addListener(listener)
-    }
-
-    fun ignore(listener: Store.Listener<HomeState>) {
-        store.removeListener(listener)
-    }
-
-    fun goToNextMonth() {
-        dispatcher.dispatch(HomeActions.NextClicked)
-    }
-
-    fun goToPreviousMonth() {
-        dispatcher.dispatch(HomeActions.PrevClicked)
-    }
-
-    fun jumpToToday() {
-        dispatcher.dispatch(HomeActions.JumpToToday)
+    fun onFabClicked() {
+        store.update(AppState("BUTTTTTT ${DateTime.now().seconds}"))
     }
 }
