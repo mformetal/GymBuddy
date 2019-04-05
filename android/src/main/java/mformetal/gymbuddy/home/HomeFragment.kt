@@ -1,13 +1,8 @@
 package mformetal.gymbuddy.home
 
-import android.os.Bundle
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import mformetal.gymbuddy.R
 import mformetal.gymbuddy.base.android.DelegateFragment
 import mformetal.gymbuddy.kedux.Dispatcher
-import mformetal.gymbuddy.kedux.v2.CoroutinesStore
-import mformetal.gymbuddy.kedux.v2.CoroutinesViewModel
 
 class HomeFragment : DelegateFragment<HomeDelegate, HomeViewController>() {
 

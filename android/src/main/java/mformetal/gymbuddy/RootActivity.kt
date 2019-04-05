@@ -1,46 +1,51 @@
 package mformetal.gymbuddy
 
 import android.os.Bundle
-import android.widget.Toast
+import android.os.CountDownTimer
+import android.os.Handler
+import android.util.Log
+import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
-import kotlinx.coroutines.InternalCoroutinesApi
-import mformetal.gymbuddy.home.*
-import mformetal.gymbuddy.kedux.v2.CoroutinesStore
-import mformetal.gymbuddy.kedux.v2.CoroutinesViewModel
+import kotlinx.coroutines.Dispatchers
+import mformetal.gymbuddy.kedux.v2.Store
+import mformetal.gymbuddy.kedux.v2.ViewModel
 
 class RootActivity : FragmentActivity() {
 
-    val store = CoroutinesStore("first")
-    val vm = CoroutinesViewModel(store)
+    val store = Store("first")
+    val vm = ViewModel(store,
+            Dispatchers.Main,
+            Dispatchers.IO)
 
-    @InternalCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.root)
 
-        Toast.makeText(this, "TEST", Toast.LENGTH_SHORT).show()
+        val textView = findViewById<TextView>(R.id.test)
 
-        store.update("OK")
-
-        val aggregate = mutableListOf<String>()
-        vm.observe {
-            aggregate.add(it)
-
-            Toast.makeText(this, it, Toast.LENGTH_LONG).show()
+        vm.start {
+            textView.text = it + ", " + textView.text
         }
 
-        store.update("BRO")
+        object : CountDownTimer(1000, 1) {
+            override fun onFinish() {
+                store.update("FINISH")
+            }
 
-        store.update("WE")
+            override fun onTick(millisUntilFinished: Long) {
+                Log.d("WTF", "$millisUntilFinished")
+                store.update("$millisUntilFinished")
+            }
+        }.start()
+    }
 
-        store.update("TEST")
+    override fun onResume() {
+        super.onResume()
 
-//        if (savedInstanceState == null) {
-//            supportFragmentManager.beginTransaction()
-//                    .add(R.id.app_root, HomeFragment.newInstance())
-//                    .commit()
-//        }
+        Handler().postDelayed(Runnable {
+            store.update("NEW SHIT")
+        }, 10000)
     }
 
     override fun onStop() {
