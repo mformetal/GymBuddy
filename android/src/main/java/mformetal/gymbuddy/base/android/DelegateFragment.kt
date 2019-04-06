@@ -13,13 +13,11 @@ import mformetal.gymbuddy.viewbinding.AndroidViewFinder
 import mformetal.gymbuddy.viewbinding.AndroidController
 import mformetal.gymbuddy.viewbinding.ViewFinder
 
-abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>, C: ComponentController<S>> : Fragment() {
+abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>> : Fragment() {
 
     private lateinit var delegate: D
 
-    abstract fun controller() : C
-
-    abstract fun delegate(controller: ComponentController<S>) : D
+    abstract fun delegate() : D
 
     @LayoutRes
     abstract fun layoutId() : Int
@@ -36,8 +34,7 @@ abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>, C: ComponentCo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val controller = controller()
-        delegate = delegate(controller)
+        delegate = delegate()
     }
 
     override fun onDestroy() {
