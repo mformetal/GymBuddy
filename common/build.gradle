@@ -1,16 +1,14 @@
 apply plugin: 'kotlin-multiplatform'
 
 kotlin {
-    targets {
-        fromPreset(presets.jvm, 'android')
-    }
+    jvm()
 
     sourceSets {
         commonMain {
             dependencies {
                 implementation commonDeps.coroutines
                 implementation commonDeps.klock
-                implementation commonDeps.kotlinCommon
+                implementation commonDeps.kotlin
             }
         }
         commonTest {
@@ -20,13 +18,13 @@ kotlin {
                 implementation commonTestDeps.mock
             }
         }
-        androidMain {
+        jvmMain {
             dependencies {
                 implementation jvmDeps.coroutines
                 implementation jvmDeps.kotlin
             }
         }
-        androidTest {
+        jvmTest {
             dependencies {
                 implementation jvmDeps.junit
                 implementation jvmDeps.mock

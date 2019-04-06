@@ -10,7 +10,11 @@ class HomeViewModel(store: Store<AppState>,
                     mainDispatcher: CoroutineDispatcher,
                     ioDispatcher: CoroutineDispatcher) : ViewModel<AppState>(store, mainDispatcher, ioDispatcher) {
 
-    fun onFabClicked() {
-        store.update(AppState("BUTTTTTT ${DateTime.now().seconds}"))
+    fun showNextMonth() {
+
+    }
+
+    fun showPreviousMontu() {
+
     }
 }
