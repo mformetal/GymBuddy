@@ -2,9 +2,8 @@ package mformetal.gymbuddy.home
 
 import kotlinx.coroutines.Dispatchers
 import mformetal.gymbuddy.R
-import mformetal.gymbuddy.base.android.DelegateFragment
+import mformetal.gymbuddy.android.DelegateFragment
 import mformetal.gymbuddy.kedux.arch.Store
-import mformetal.gymbuddy.kedux.presentation.ComponentController
 import mformetal.gymbuddy.kedux.state.AppState
 
 class HomeFragment : DelegateFragment<AppState, HomeDelegate>() {

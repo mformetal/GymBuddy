@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.viewbinding
+package mformetal.gymbuddy.android.viewbinding
 
 import mformetal.gymbuddy.kedux.presentation.ComponentController
 import mformetal.gymbuddy.kedux.state.AppState

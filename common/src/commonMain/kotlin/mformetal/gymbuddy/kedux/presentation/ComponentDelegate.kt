@@ -1,19 +1,17 @@
 package mformetal.gymbuddy.kedux.presentation
 
-import mformetal.gymbuddy.kedux.state.AppState
+import mformetal.gymbuddy.kedux.arch.ViewModel
 
-interface ComponentDelegate<S : Any> {
+abstract class ComponentDelegate<S : Any>(
+        protected val viewModel: ViewModel<S>,
+        protected val componentController: ComponentController<S>) {
 
-    val componentController: ComponentController<S>
-
-    fun onViewCreated() {
-
+    open fun onViewCreated(view: Any) {
+        componentController.bind(view)
+        viewModel.subscribe(componentController.render)
     }
 
-    fun onViewDestroyed() {
-
+    open fun onViewDestroyed() {
+        viewModel.unsubscribe()
     }
-
-
-    fun listen(onStateChanged: (S) -> Unit)
 }

@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.base.android
+package mformetal.gymbuddy.android
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import mformetal.gymbuddy.kedux.presentation.ComponentController
 import mformetal.gymbuddy.kedux.presentation.ComponentDelegate
-import mformetal.gymbuddy.kedux.state.AppState
-import mformetal.gymbuddy.viewbinding.AndroidViewFinder
-import mformetal.gymbuddy.viewbinding.AndroidController
-import mformetal.gymbuddy.viewbinding.ViewFinder
+import mformetal.gymbuddy.android.viewbinding.AndroidViewFinder
 
 abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>> : Fragment() {
 
@@ -25,9 +21,7 @@ abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>> : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(layoutId(), container, false).also { view ->
                 with (delegate) {
-                    componentController.bind(AndroidViewFinder(view))
-                    onViewCreated()
-                    listen(componentController.render)
+                    onViewCreated(AndroidViewFinder(view))
                 }
             }
 

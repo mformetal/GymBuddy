@@ -4,7 +4,7 @@ import android.view.View
 import androidx.annotation.IdRes
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.mockk.mockk
-import mformetal.gymbuddy.viewbinding.ViewFinder
+import mformetal.gymbuddy.android.viewbinding.ViewFinder
 import kotlin.reflect.KClass
 
 class TestViewFinder : ViewFinder {

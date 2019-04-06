@@ -1,4 +1,4 @@
-package mformetal.gymbuddy.viewbinding
+package mformetal.gymbuddy.android.viewbinding
 
 import android.view.View
 import androidx.annotation.IdRes

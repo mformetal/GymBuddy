@@ -13,11 +13,6 @@ import mformetal.gymbuddy.kedux.arch.ViewModel
 
 class RootActivity : FragmentActivity() {
 
-    val store = Store("first")
-    val vm = ViewModel(store,
-            Dispatchers.Main,
-            Dispatchers.IO)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

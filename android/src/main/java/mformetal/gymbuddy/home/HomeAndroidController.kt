@@ -4,8 +4,8 @@ import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import mformetal.gymbuddy.R
 import mformetal.gymbuddy.kedux.state.AppState
-import mformetal.gymbuddy.viewbinding.AndroidController
-import mformetal.gymbuddy.viewbinding.find
+import mformetal.gymbuddy.android.viewbinding.AndroidController
+import mformetal.gymbuddy.android.viewbinding.find
 
 class HomeAndroidController(private val viewModel: HomeViewModel) : AndroidController() {
 

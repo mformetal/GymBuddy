@@ -23,7 +23,7 @@ open class ViewModel<S : Any>(protected val store: Store<S>,
         }
     }
 
-    fun stop() {
+    fun unsubscribe() {
         job?.cancel()
         job = Job()
     }
