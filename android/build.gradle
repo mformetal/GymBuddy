@@ -37,6 +37,6 @@ dependencies {
     debugImplementation androidDeps.debugLeakCanary
     releaseImplementation androidDeps.releaseLeakCanary
 
-    testImplementation jvmDeps.junit
-    testImplementation jvmDeps.mock
+    testImplementation jvmTestDeps.junit
+    testImplementation jvmTestDeps.mock
 }

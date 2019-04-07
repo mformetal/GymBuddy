@@ -21,9 +21,12 @@ ext {
     jvmDeps = [
             coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines",
             kotlin : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            klock : "com.soywiz:klock-jvm:$klockVersion",
+    ]
+
+    jvmTestDeps = [
             junit : "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
             mock : "io.mockk:mockk:$mockVersion",
-            klock : "com.soywiz:klock-jvm:$klockVersion"
     ]
 
     leakCanaryVersion = '1.6.2'

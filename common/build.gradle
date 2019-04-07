@@ -30,8 +30,8 @@ kotlin {
         }
         jvmTest {
             dependencies {
-                implementation jvmDeps.junit
-                implementation jvmDeps.mock
+                implementation jvmTestDeps.junit
+                implementation jvmTestDeps.mock
             }
         }
     }
