@@ -1,6 +1,4 @@
 package mformetal.gymbuddy.di
 
-object Dependencies {
-
-
+class Deps {
 }

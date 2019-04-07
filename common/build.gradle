@@ -9,6 +9,7 @@ kotlin {
                 implementation commonDeps.coroutines
                 implementation commonDeps.klock
                 implementation commonDeps.kotlin
+                implementation commonDeps.kodein
             }
         }
         commonTest {
@@ -22,7 +23,9 @@ kotlin {
             dependencies {
                 implementation jvmDeps.coroutines
                 implementation jvmDeps.kotlin
-                implementation jvmDeps.klock
+                api (jvmDeps.klock) {
+                    exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib-jdk8"
+                }
             }
         }
         jvmTest {

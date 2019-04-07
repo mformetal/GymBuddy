@@ -2,6 +2,7 @@ package mformetal.gymbuddy
 
 import android.app.Application
 import com.squareup.leakcanary.LeakCanary
+import mformetal.gymbuddy.di.Deps
 import mformetal.gymbuddy.extensions.takeIfFalse
 
 class App : Application() {

@@ -4,6 +4,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.channels.distinct
+import kotlinx.coroutines.channels.map
 
 open class ViewModel<S : Any>(protected val store: Store<S>,
                               protected val mainDispatcher: CoroutineDispatcher,
