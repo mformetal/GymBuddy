@@ -13,3 +13,5 @@ actual object ExpectedDispatchers {
 
     actual val ui: CoroutineDispatcher = Dispatchers.Main
 }
+
+actual class DispatcherHolder(actual val io: CoroutineDispatcher, actual val ui: CoroutineDispatcher)

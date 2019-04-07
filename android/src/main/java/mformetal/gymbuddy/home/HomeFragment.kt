@@ -4,6 +4,7 @@ import com.soywiz.klock.Month
 import kotlinx.coroutines.Dispatchers
 import mformetal.gymbuddy.R
 import mformetal.gymbuddy.android.DelegateFragment
+import mformetal.gymbuddy.expectations.DispatcherHolder
 import mformetal.gymbuddy.kedux.arch.Store
 import mformetal.gymbuddy.kedux.state.AppState
 import mformetal.gymbuddy.kedux.state.CalendarState
@@ -15,7 +16,7 @@ class HomeFragment : DelegateFragment<AppState, HomeDelegate>() {
     }
 
     val viewModel by lazy {
-        HomeViewModel(Store(AppState(CalendarState(Month.get(1)))), Dispatchers.Main, Dispatchers.IO)
+        HomeViewModel(Store(AppState(CalendarState(Month.get(1)))), DispatcherHolder(Dispatchers.IO, Dispatchers.Main))
     }
 
     override fun layoutId(): Int = R.layout.home

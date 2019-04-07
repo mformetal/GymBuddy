@@ -9,7 +9,6 @@ kotlin {
                 implementation commonDeps.coroutines
                 implementation commonDeps.klock
                 implementation commonDeps.kotlin
-                implementation commonDeps.kodein
             }
         }
         commonTest {

@@ -1,6 +1,8 @@
 package mformetal.gymbuddy.di
 
 import com.soywiz.klock.Month
+import mformetal.gymbuddy.expectations.DispatcherHolder
+import mformetal.gymbuddy.expectations.ExpectedDispatchers
 import mformetal.gymbuddy.kedux.arch.Store
 import mformetal.gymbuddy.kedux.state.AppState
 import mformetal.gymbuddy.kedux.state.CalendarState
@@ -18,6 +20,13 @@ object Deps {
                     )
             )
             Store(appState)
+        }
+
+        bind() from singleton {
+            DispatcherHolder(
+                    ExpectedDispatchers.io,
+                    ExpectedDispatchers.ui
+            )
         }
     }
 }

@@ -11,3 +11,8 @@ expect object ExpectedDispatchers {
 
     val ui : CoroutineDispatcher
 }
+
+expect class DispatcherHolder {
+    val io : CoroutineDispatcher
+    val ui : CoroutineDispatcher
+}

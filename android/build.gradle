@@ -27,7 +27,6 @@ dependencies {
 
     implementation androidDeps.kotlin
     implementation androidDeps.coroutines
-    implementation androidDeps.kodein
     
     implementation androidDeps.androidx
     implementation androidDeps.constraint
