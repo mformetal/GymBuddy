@@ -43,7 +43,7 @@ ext {
             kodein : [
                     "org.kodein.di:kodein-di-core-jvm:$kodeinVersion",
                     "org.kodein.di:kodein-di-erased-jvm:$kodeinVersion",
-                    "org.kodein.di:kodein-di-framework-android-core:$kodeinVersion"
+                    "org.kodein.di:kodein-di-framework-android-x:$kodeinVersion"
             ]
     ]
 }

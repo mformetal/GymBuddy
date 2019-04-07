@@ -8,10 +8,17 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import mformetal.gymbuddy.kedux.presentation.ComponentDelegate
 import mformetal.gymbuddy.android.viewbinding.AndroidViewFinder
+import org.kodein.di.KodeinAware
+import org.kodein.di.KodeinTrigger
+import org.kodein.di.android.x.kodein
 
-abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>> : Fragment() {
+abstract class DelegateFragment<S: Any, D : ComponentDelegate<S>> : Fragment(), KodeinAware {
 
     private lateinit var delegate: D
+
+    override val kodein by kodein()
+
+    override val kodeinTrigger = KodeinTrigger()
 
     abstract fun delegate() : D
 
