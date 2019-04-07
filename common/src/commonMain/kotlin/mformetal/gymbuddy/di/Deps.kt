@@ -10,7 +10,7 @@ import org.kodein.di.erased.singleton
 
 object Deps {
 
-    val kodein = Kodein.invoke {
+    val rootModule = Kodein.Module {
         bind() from singleton {
             val appState = AppState(
                     calendarState = CalendarState(
